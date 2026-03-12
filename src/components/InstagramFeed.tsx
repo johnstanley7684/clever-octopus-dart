@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 const instagramPosts = [
-  { id: 1, likes: "1.2k", comments: "45", image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80&w=600" },
-  { id: 2, likes: "850", comments: "22", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=600" },
-  { id: 3, likes: "2.1k", comments: "89", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=600" },
-  { id: 4, likes: "940", comments: "31", image: "https://images.unsplash.com/photo-1512719994953-eabf50895df7?auto=format&fit=crop&q=80&w=600" },
-  { id: 5, likes: "1.5k", comments: "56", image: "https://images.unsplash.com/photo-1518611012118-296072bb58c4?auto=format&fit=crop&q=80&w=600" },
-  { id: 6, likes: "1.1k", comments: "38", image: "https://images.unsplash.com/photo-1526232759583-26f173565548?auto=format&fit=crop&q=80&w=600" },
+  { id: 1, likes: "1.4k", comments: "52", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=600" },
+  { id: 2, likes: "920", comments: "18", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=600" },
+  { id: 3, likes: "2.5k", comments: "112", image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80&w=600" },
+  { id: 4, likes: "1.1k", comments: "42", image: "https://images.unsplash.com/photo-1512719994953-eabf50895df7?auto=format&fit=crop&q=80&w=600" },
+  { id: 5, likes: "1.8k", comments: "64", image: "https://images.unsplash.com/photo-1518611012118-296072bb58c4?auto=format&fit=crop&q=80&w=600" },
+  { id: 6, likes: "1.3k", comments: "35", image: "https://images.unsplash.com/photo-1526232759583-26f173565548?auto=format&fit=crop&q=80&w=600" },
 ];
 
 const InstagramFeed = () => {
