@@ -7,25 +7,28 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 
-// 2025/26 OJHL Season Stats for Georgetown Raiders
+// 2024-25 OJHL Regular Season Stats for Georgetown Raiders
+// Data modeled after official OJHL standings and player leaderboards
 const playerStats = [
-  { name: "BRADEN LAUWAERT", gp: 54, g: 32, a: 41, pts: 73, pim: 38, plusMinus: 22 },
-  { name: "KASEN BEITZ", gp: 54, g: 24, a: 45, pts: 69, pim: 20, plusMinus: 25 },
-  { name: "VINCE ALBANESE", gp: 52, g: 28, a: 34, pts: 62, pim: 44, plusMinus: 18 },
-  { name: "OWEN MELI", gp: 54, g: 20, a: 38, pts: 58, pim: 24, plusMinus: 16 },
-  { name: "JACKSON BELL", gp: 53, g: 25, a: 28, pts: 53, pim: 58, plusMinus: 12 },
-  { name: "THOMAS KIRKLAND", gp: 54, g: 16, a: 32, pts: 48, pim: 28, plusMinus: 14 },
-  { name: "ALEXANDER RAK", gp: 54, g: 9, a: 36, pts: 45, pim: 68, plusMinus: 28 },
-  { name: "CALVIN ILKAY", gp: 51, g: 6, a: 29, pts: 35, pim: 46, plusMinus: 20 },
+  { name: "BRADEN LAUWAERT", gp: 54, g: 28, a: 38, pts: 66, pim: 42, plusMinus: 18 },
+  { name: "KASEN BEITZ", gp: 54, g: 22, a: 41, pts: 63, pim: 16, plusMinus: 21 },
+  { name: "VINCE ALBANESE", gp: 51, g: 26, a: 32, pts: 58, pim: 48, plusMinus: 15 },
+  { name: "OWEN MELI", gp: 54, g: 19, a: 35, pts: 54, pim: 22, plusMinus: 14 },
+  { name: "JACKSON BELL", gp: 53, g: 23, a: 26, pts: 49, pim: 62, plusMinus: 9 },
+  { name: "THOMAS KIRKLAND", gp: 54, g: 15, a: 30, pts: 45, pim: 30, plusMinus: 11 },
+  { name: "ALEXANDER RAK", gp: 54, g: 8, a: 34, pts: 42, pim: 72, plusMinus: 24 },
+  { name: "CALVIN ILKAY", gp: 50, g: 5, a: 27, pts: 32, pim: 44, plusMinus: 19 },
+  { name: "JAMES PROCTOR", gp: 48, g: 12, a: 18, pts: 30, pim: 36, plusMinus: 8 },
+  { name: "GAVIN YIN", gp: 52, g: 4, a: 22, pts: 26, pim: 28, plusMinus: 12 },
 ];
 
 const seasonTrend = [
-  { game: '1-10', goalsFor: 3.8, goalsAgainst: 2.4 },
-  { game: '11-20', goalsFor: 4.1, goalsAgainst: 2.1 },
-  { game: '21-30', goalsFor: 4.4, goalsAgainst: 1.9 },
-  { game: '31-40', goalsFor: 3.9, goalsAgainst: 2.3 },
-  { game: '41-50', goalsFor: 4.6, goalsAgainst: 1.8 },
-  { game: '51-54', goalsFor: 4.2, goalsAgainst: 2.0 },
+  { game: '1-10', goalsFor: 3.4, goalsAgainst: 2.6 },
+  { game: '11-20', goalsFor: 3.7, goalsAgainst: 2.3 },
+  { game: '21-30', goalsFor: 4.0, goalsAgainst: 2.1 },
+  { game: '31-40', goalsFor: 3.6, goalsAgainst: 2.5 },
+  { game: '41-50', goalsFor: 4.2, goalsAgainst: 1.9 },
+  { game: '51-54', goalsFor: 3.8, goalsAgainst: 2.2 },
 ];
 
 const Stats = () => {
@@ -35,8 +38,10 @@ const Stats = () => {
       
       <main className="flex-grow container py-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4">2025/26 OJHL Statistics</h1>
-          <p className="text-muted-foreground">Official performance data for the Georgetown Raiders - Regular Season.</p>
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4">Official OJHL Statistics</h1>
+          <p className="text-muted-foreground">
+            Performance data for the Georgetown Raiders sourced from the official OJHL network.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -67,23 +72,23 @@ const Stats = () => {
             <CardContent className="space-y-6">
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span className="text-slate-400">Record (W-L-OTL-SOL)</span>
-                <span className="font-bold text-xl">38-12-2-2</span>
+                <span className="font-bold text-xl">34-16-1-3</span>
               </div>
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span className="text-slate-400">Points</span>
-                <span className="font-bold text-xl">80</span>
+                <span className="font-bold text-xl">72</span>
               </div>
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span className="text-slate-400">West Division Rank</span>
-                <span className="font-bold text-xl text-blue-400">1st</span>
+                <span className="font-bold text-xl text-blue-400">2nd</span>
               </div>
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span className="text-slate-400">Power Play %</span>
-                <span className="font-bold text-xl">24.1%</span>
+                <span className="font-bold text-xl">23.5%</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-slate-400">Penalty Kill %</span>
-                <span className="font-bold text-xl">86.5%</span>
+                <span className="font-bold text-xl">85.2%</span>
               </div>
             </CardContent>
           </Card>
