@@ -29,9 +29,9 @@ const ScoreTicker = () => {
           >
             <span className="text-[10px] font-bold text-slate-500 mr-3">{game.date}</span>
             <div className="flex items-center gap-4 text-xs font-black">
-              <span className={game.home === "RAIDERS" ? "text-blue-400" : ""}>{game.home}</span>
+              <span className={game.home === "RAIDERS" ? "text-red-500" : ""}>{game.home}</span>
               <span className="bg-slate-800 px-2 py-0.5 rounded text-[10px]">{game.score}</span>
-              <span className={game.away === "RAIDERS" ? "text-blue-400" : ""}>{game.away}</span>
+              <span className={game.away === "RAIDERS" ? "text-red-500" : ""}>{game.away}</span>
             </div>
             <span className="ml-3 text-[10px] font-bold text-green-500">{game.status}</span>
           </Link>
