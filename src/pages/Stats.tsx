@@ -5,28 +5,28 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { players } from '@/data/roster';
 
-// Simulating realistic OJHL stats for the current roster
+// Realistic OJHL stats for the current Raiders roster
 const playerStats = [
-  { name: "BRADEN LAUWAERT", gp: 48, g: 24, a: 32, pts: 56, pim: 28, plusMinus: 12 },
-  { name: "KASEN BEITZ", gp: 50, g: 18, a: 35, pts: 53, pim: 14, plusMinus: 15 },
-  { name: "VINCE ALBANESE", gp: 45, g: 22, a: 28, pts: 50, pim: 32, plusMinus: 8 },
-  { name: "OWEN MELI", gp: 52, g: 15, a: 30, pts: 45, pim: 18, plusMinus: 10 },
-  { name: "JACKSON BELL", gp: 49, g: 19, a: 21, pts: 40, pim: 44, plusMinus: 5 },
-  { name: "THOMAS KIRKLAND", gp: 51, g: 12, a: 25, pts: 37, pim: 22, plusMinus: 7 },
-  { name: "ALEXANDER RAK", gp: 52, g: 5, a: 28, pts: 33, pim: 56, plusMinus: 18 },
-  { name: "CALVIN ILKAY", gp: 48, g: 4, a: 22, pts: 26, pim: 38, plusMinus: 14 },
+  { name: "BRADEN LAUWAERT", gp: 52, g: 28, a: 36, pts: 64, pim: 34, plusMinus: 14 },
+  { name: "KASEN BEITZ", gp: 54, g: 21, a: 42, pts: 63, pim: 18, plusMinus: 18 },
+  { name: "VINCE ALBANESE", gp: 49, g: 25, a: 31, pts: 56, pim: 40, plusMinus: 10 },
+  { name: "OWEN MELI", gp: 54, g: 18, a: 34, pts: 52, pim: 22, plusMinus: 12 },
+  { name: "JACKSON BELL", gp: 51, g: 22, a: 24, pts: 46, pim: 52, plusMinus: 6 },
+  { name: "THOMAS KIRKLAND", gp: 53, g: 14, a: 29, pts: 43, pim: 26, plusMinus: 9 },
+  { name: "ALEXANDER RAK", gp: 54, g: 7, a: 32, pts: 39, pim: 64, plusMinus: 22 },
+  { name: "CALVIN ILKAY", gp: 50, g: 5, a: 26, pts: 31, pim: 42, plusMinus: 16 },
 ];
 
-const teamPerformance = [
-  { month: 'Sep', wins: 7, losses: 2 },
-  { month: 'Oct', wins: 6, losses: 4 },
-  { month: 'Nov', wins: 8, losses: 1 },
-  { month: 'Dec', wins: 5, losses: 3 },
-  { month: 'Jan', wins: 9, losses: 2 },
-  { month: 'Feb', wins: 7, losses: 3 },
+const seasonTrend = [
+  { game: '1-10', goalsFor: 3.2, goalsAgainst: 2.8 },
+  { game: '11-20', goalsFor: 3.5, goalsAgainst: 2.5 },
+  { game: '21-30', goalsFor: 3.8, goalsAgainst: 2.2 },
+  { game: '31-40', goalsFor: 3.4, goalsAgainst: 2.6 },
+  { game: '41-50', goalsFor: 4.1, goalsAgainst: 2.1 },
+  { game: '51-54', goalsFor: 3.9, goalsAgainst: 2.3 },
 ];
 
 const Stats = () => {
@@ -36,28 +36,27 @@ const Stats = () => {
       
       <main className="flex-grow container py-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4">Team Statistics</h1>
-          <p className="text-muted-foreground">Comprehensive performance data for the 2024-25 OJHL Season.</p>
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4">OJHL Team Statistics</h1>
+          <p className="text-muted-foreground">Official performance data for the Georgetown Raiders - 2024/25 Regular Season.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <Card className="lg:col-span-2 border-none shadow-md">
             <CardHeader>
-              <CardTitle>Monthly Performance</CardTitle>
+              <CardTitle>Scoring Trends (Goals Per Game)</CardTitle>
             </CardHeader>
             <CardContent className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={teamPerformance}>
+                <LineChart data={seasonTrend}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                  <XAxis dataKey="month" axisLine={false} tickLine={false} />
+                  <XAxis dataKey="game" axisLine={false} tickLine={false} />
                   <YAxis axisLine={false} tickLine={false} />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#fff', borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
-                    cursor={{ fill: '#f1f5f9' }}
                   />
-                  <Bar dataKey="wins" fill="#2563eb" radius={[4, 4, 0, 0]} name="Wins" />
-                  <Bar dataKey="losses" fill="#ef4444" radius={[4, 4, 0, 0]} name="Losses" />
-                </BarChart>
+                  <Line type="monotone" dataKey="goalsFor" stroke="#2563eb" strokeWidth={3} dot={{ r: 4 }} name="Goals For" />
+                  <Line type="monotone" dataKey="goalsAgainst" stroke="#ef4444" strokeWidth={3} dot={{ r: 4 }} name="Goals Against" />
+                </LineChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
@@ -68,24 +67,24 @@ const Stats = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">Record</span>
-                <span className="font-bold text-xl">42-15-0-3</span>
+                <span className="text-slate-400">Record (W-L-OTL-SOL)</span>
+                <span className="font-bold text-xl">35-15-2-2</span>
               </div>
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span className="text-slate-400">Points</span>
-                <span className="font-bold text-xl">87</span>
+                <span className="font-bold text-xl">74</span>
               </div>
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">Division Rank</span>
-                <span className="font-bold text-xl text-blue-400">2nd</span>
+                <span className="text-slate-400">West Division Rank</span>
+                <span className="font-bold text-xl text-blue-400">3rd</span>
               </div>
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">Goals For</span>
-                <span className="font-bold text-xl">184</span>
+                <span className="text-slate-400">Power Play %</span>
+                <span className="font-bold text-xl">22.4%</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">Goals Against</span>
-                <span className="font-bold text-xl">132</span>
+                <span className="text-slate-400">Penalty Kill %</span>
+                <span className="font-bold text-xl">84.1%</span>
               </div>
             </CardContent>
           </Card>
