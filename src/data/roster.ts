@@ -29,7 +29,7 @@ export interface Staff {
 
 const defaultBio = "A dedicated member of the Georgetown Raiders, committed to excellence on and off the ice.";
 const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
-const staffLogoUrl = "http://www.georgetownraiders.com/pics/georgetown logo.png";
+const staffLogoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
 
 export const players: Player[] = [
   { id: "7", name: "BRADEN LAUWAERT", number: "7", position: "FORWARD", height: "6'2\"", weight: "185 lbs", shot: "Left", hometown: "Brantford, ON", image: logoUrl, bio: defaultBio, stats: { gp: 54, g: 28, a: 38, pts: 66, pim: 42, plusMinus: 18 } },
@@ -74,7 +74,7 @@ export const staff: Staff[] = [
   { id: "s17", name: "Alex Pincente", role: "Game Day Intern", experience: "Intern", image: staffLogoUrl },
   { id: "s18", name: "Maghfoor Ahmad", role: "Game Day Volunteer", experience: "Volunteer", image: staffLogoUrl },
   { id: "s19", name: "Mike Elson", role: "Head Scout", experience: "Scouting", image: staffLogoUrl },
-  { id: "s20", name: "David Ciss", role: "Regional Scout", experience: "Scouting", image: hometown: "Scouting", image: staffLogoUrl },
+  { id: "s20", name: "David Ciss", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
   { id: "s21", name: "Mitchell Skilton", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
   { id: "s22", name: "Jesse Candela", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
   { id: "s23", name: "Cameron Cook", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
