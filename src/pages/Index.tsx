@@ -75,7 +75,7 @@ const Index = () => {
         </section>
 
         {/* Next Game Section */}
-        <section className="py-12 bg-slate-950 text-white">
+        <section className="pt-24 pb-12 bg-slate-950 text-white">
           <div className="container">
             <div className="bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
               <div className="text-center md:text-left">
