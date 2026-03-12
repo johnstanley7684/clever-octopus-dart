@@ -6,21 +6,12 @@ import Footer from '@/components/Footer';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { players } from '@/data/roster';
 
-// 2024-25 OJHL Regular Season Stats for Georgetown Raiders
-// Data modeled after official OJHL standings and player leaderboards
-const playerStats = [
-  { name: "BRADEN LAUWAERT", gp: 54, g: 28, a: 38, pts: 66, pim: 42, plusMinus: 18 },
-  { name: "KASEN BEITZ", gp: 54, g: 22, a: 41, pts: 63, pim: 16, plusMinus: 21 },
-  { name: "VINCE ALBANESE", gp: 51, g: 26, a: 32, pts: 58, pim: 48, plusMinus: 15 },
-  { name: "OWEN MELI", gp: 54, g: 19, a: 35, pts: 54, pim: 22, plusMinus: 14 },
-  { name: "JACKSON BELL", gp: 53, g: 23, a: 26, pts: 49, pim: 62, plusMinus: 9 },
-  { name: "THOMAS KIRKLAND", gp: 54, g: 15, a: 30, pts: 45, pim: 30, plusMinus: 11 },
-  { name: "ALEXANDER RAK", gp: 54, g: 8, a: 34, pts: 42, pim: 72, plusMinus: 24 },
-  { name: "CALVIN ILKAY", gp: 50, g: 5, a: 27, pts: 32, pim: 44, plusMinus: 19 },
-  { name: "JAMES PROCTOR", gp: 48, g: 12, a: 18, pts: 30, pim: 36, plusMinus: 8 },
-  { name: "GAVIN YIN", gp: 52, g: 4, a: 22, pts: 26, pim: 28, plusMinus: 12 },
-];
+// Sort players by points for the leaderboard
+const playerStats = [...players]
+  .sort((a, b) => b.stats.pts - a.stats.pts)
+  .slice(0, 15);
 
 const seasonTrend = [
   { game: '1-10', goalsFor: 3.4, goalsAgainst: 2.6 },
@@ -113,18 +104,18 @@ const Stats = () => {
               </TableHeader>
               <TableBody>
                 {playerStats.map((player) => (
-                  <TableRow key={player.name} className="hover:bg-slate-50/50 transition-colors">
+                  <TableRow key={player.id} className="hover:bg-slate-50/50 transition-colors">
                     <TableCell className="font-bold pl-6">{player.name}</TableCell>
-                    <TableCell className="text-center">{player.gp}</TableCell>
-                    <TableCell className="text-center">{player.g}</TableCell>
-                    <TableCell className="text-center">{player.a}</TableCell>
-                    <TableCell className="text-center font-black text-blue-600">{player.pts}</TableCell>
+                    <TableCell className="text-center">{player.stats.gp}</TableCell>
+                    <TableCell className="text-center">{player.stats.g}</TableCell>
+                    <TableCell className="text-center">{player.stats.a}</TableCell>
+                    <TableCell className="text-center font-black text-blue-600">{player.stats.pts}</TableCell>
                     <TableCell className="text-center">
-                      <span className={player.plusMinus > 0 ? "text-green-600 font-bold" : "text-red-600 font-bold"}>
-                        {player.plusMinus > 0 ? `+${player.plusMinus}` : player.plusMinus}
+                      <span className={player.stats.plusMinus > 0 ? "text-green-600 font-bold" : "text-red-600 font-bold"}>
+                        {player.stats.plusMinus > 0 ? `+${player.stats.plusMinus}` : player.stats.plusMinus}
                       </span>
                     </TableCell>
-                    <TableCell className="text-center pr-6">{player.pim}</TableCell>
+                    <TableCell className="text-center pr-6">{player.stats.pim}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
