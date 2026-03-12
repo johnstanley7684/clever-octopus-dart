@@ -67,7 +67,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <Link to="/schedule">
-                  <Button size="lg" variant="outline" className="rounded-full px-10 h-14 text-lg font-bold border-white/20 text-white hover:bg-white hover:text-black backdrop-blur-sm">
+                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/20">
                     Full Schedule
                   </Button>
                 </Link>
