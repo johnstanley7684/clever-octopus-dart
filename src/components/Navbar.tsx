@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, HelpCircle, LayoutDashboard, Image, Zap } from 'lucide-react';
+import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, HelpCircle, LayoutDashboard, Image, Zap, LogIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import CartDrawer from './CartDrawer';
@@ -56,8 +56,13 @@ const Navbar = () => {
           ))}
           <div className="flex items-center gap-2 ml-2">
             <CartDrawer />
+            <Link to="/login">
+              <Button variant="ghost" size="sm" className="rounded-full px-4 h-8 text-xs text-white hover:bg-red-600">
+                Login
+              </Button>
+            </Link>
             <Link to="/tickets">
-              <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs bg-red-600 hover:bg-red-700">
+              <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs bg-red-600 hover:bg-red-700 text-white">
                 Tickets
               </Button>
             </Link>
@@ -93,9 +98,14 @@ const Navbar = () => {
               <span>{item.name}</span>
             </Link>
           ))}
-          <Link to="/tickets" onClick={() => setIsOpen(false)}>
-            <Button className="w-full rounded-full mt-2 bg-red-600 hover:bg-red-700">Tickets</Button>
-          </Link>
+          <div className="grid grid-cols-2 gap-2 mt-4">
+            <Link to="/login" onClick={() => setIsOpen(false)}>
+              <Button variant="outline" className="w-full rounded-full border-red-600 text-red-600">Login</Button>
+            </Link>
+            <Link to="/tickets" onClick={() => setIsOpen(false)}>
+              <Button className="w-full rounded-full bg-red-600 hover:bg-red-700 text-white">Tickets</Button>
+            </Link>
+          </div>
         </div>
       )}
     </nav>
