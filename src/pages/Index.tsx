@@ -133,7 +133,7 @@ const Index = () => {
                   Season Tickets
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="rounded-full px-10 font-bold border-white text-white hover:bg-white hover:text-blue-600">
+              <Button size="lg" className="rounded-full px-10 font-bold bg-red-600 hover:bg-red-700 text-white border-none">
                 Group Bookings
               </Button>
             </div>

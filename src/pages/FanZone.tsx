@@ -133,19 +133,6 @@ const FanZone = () => {
                   </div>
                 </CardContent>
               </Card>
-
-              <div className="bg-slate-900 rounded-2xl p-8 text-white text-center">
-                <h3 className="text-xl font-bold mb-4">Join the Newsletter</h3>
-                <p className="text-sm text-slate-400 mb-6">Get exclusive fan content and early access to tickets.</p>
-                <div className="space-y-3">
-                  <input 
-                    type="email" 
-                    placeholder="Your email" 
-                    className="w-full bg-slate-800 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500"
-                  />
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 rounded-full">Subscribe</Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

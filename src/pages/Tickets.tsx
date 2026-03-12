@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check, Ticket, Star, Users, ShieldCheck } from 'lucide-react';
+import { Check, Ticket, Star, Users, ShieldCheck, Trophy } from 'lucide-react';
 import { showSuccess } from '@/utils/toast';
 import { cn } from '@/lib/utils';
 
@@ -120,7 +120,7 @@ const Tickets = () => {
                 <span>On-Ice Access</span>
               </div>
             </div>
-            <Button variant="outline" className="rounded-full px-8">Contact Group Sales</Button>
+            <Button className="rounded-full px-8 bg-red-600 hover:bg-red-700 text-white">Contact Group Sales</Button>
           </div>
           <div className="md:w-1/2">
             <img 

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-slate-950 text-slate-200 border-t border-slate-800">
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="bg-white p-1.5 rounded-lg">
@@ -50,21 +50,6 @@ const Footer = () => {
               <li>Halton Hills, ON L7G 4A8</li>
               <li>(905) 877-8488</li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-white mb-4">Newsletter</h4>
-            <p className="text-sm text-slate-400 mb-4">Get the latest scores and news delivered to your inbox.</p>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Email address" 
-                className="bg-slate-900 border-slate-800 rounded-md px-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                Join
-              </button>
-            </div>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">

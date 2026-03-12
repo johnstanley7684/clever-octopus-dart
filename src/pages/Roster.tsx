@@ -32,7 +32,7 @@ const Roster = () => {
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">Team Roster</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Meet the athletes and staff who drive the Titans towards victory every single night.
+            Meet the Raiders and their Staff, who drive the Raiders to victory at every game they play
           </p>
         </div>
 
