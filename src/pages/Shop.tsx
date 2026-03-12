@@ -12,10 +12,10 @@ import { useCart } from '@/context/CartContext';
 
 const products = [
   { id: 1, name: "Home Authentic Jersey", price: "$180.00", category: "Apparel", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=400", tag: "Best Seller" },
-  { id: 2, name: "Titans Snapback Hat", price: "$35.00", category: "Headwear", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=400", tag: "New" },
+  { id: 2, name: "Raiders Snapback Hat", price: "$35.00", category: "Headwear", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=400", tag: "New" },
   { id: 3, name: "Team Logo Hoodie", price: "$65.00", category: "Apparel", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=400" },
   { id: 4, name: "Official Game Puck", price: "$15.00", category: "Accessories", image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80&w=400" },
-  { id: 5, name: "Titans Scarf", price: "$25.00", category: "Accessories", image: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&q=80&w=400" },
+  { id: 5, name: "Raiders Scarf", price: "$25.00", category: "Accessories", image: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&q=80&w=400" },
   { id: 6, name: "Away Replica Jersey", price: "$120.00", category: "Apparel", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=400" },
 ];
 
@@ -39,8 +39,8 @@ const Shop = () => {
       <main className="flex-grow container py-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Titans Fan Shop</h1>
-            <p className="text-slate-400">Gear up and show your pride for the blue and white.</p>
+            <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Raiders Gear</h1>
+            <p className="text-slate-400">Gear up and show your pride for the red and black.</p>
           </div>
           <div className="flex gap-2">
             <div className="relative">
