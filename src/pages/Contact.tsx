@@ -32,31 +32,31 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <Card className="border-none shadow-lg bg-zinc-900">
+            <Card className="border-none shadow-lg bg-red-600 text-black">
               <CardHeader>
-                <CardTitle>Send us a Message</CardTitle>
+                <CardTitle className="text-black">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" placeholder="John Doe" className="bg-zinc-800 border-zinc-700" required />
+                      <Label htmlFor="name" className="text-black font-bold">Full Name</Label>
+                      <Input id="name" placeholder="John Doe" className="bg-black/10 border-black/20 text-black placeholder:text-black/50" required />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" placeholder="john@example.com" className="bg-zinc-800 border-zinc-700" required />
+                      <Label htmlFor="email" className="text-black font-bold">Email Address</Label>
+                      <Input id="email" type="email" placeholder="john@example.com" className="bg-black/10 border-black/20 text-black placeholder:text-black/50" required />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="How can we help?" className="bg-zinc-800 border-zinc-700" required />
+                    <Label htmlFor="subject" className="text-black font-bold">Subject</Label>
+                    <Input id="subject" placeholder="How can we help?" className="bg-black/10 border-black/20 text-black placeholder:text-black/50" required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Tell us more..." className="min-h-[150px] bg-zinc-800 border-zinc-700" required />
+                    <Label htmlFor="message" className="text-black font-bold">Message</Label>
+                    <Textarea id="message" placeholder="Tell us more..." className="min-h-[150px] bg-black/10 border-black/20 text-black placeholder:text-black/50" required />
                   </div>
-                  <Button type="submit" className="w-full md:w-auto px-12 rounded-full bg-red-600 hover:bg-red-700">
+                  <Button type="submit" className="w-full md:w-auto px-12 rounded-full bg-black text-white hover:bg-zinc-900">
                     Send Message
                   </Button>
                 </form>
@@ -65,51 +65,51 @@ const Contact = () => {
           </div>
 
           <div className="space-y-6">
-            <Card className="border-none shadow-md bg-red-600 text-white">
+            <Card className="border-none shadow-md bg-red-600 text-black">
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+                <CardTitle className="text-black">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 mt-1 text-red-200" />
+                  <MapPin className="h-5 w-5 mt-1 text-black/70" />
                   <div>
                     <p className="font-bold">{siteConfig.name} Arena</p>
-                    <p className="text-sm text-red-100">{siteConfig.contact.address}</p>
+                    <p className="text-sm text-black/60">{siteConfig.contact.address}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 mt-1 text-red-200" />
+                  <Phone className="h-5 w-5 mt-1 text-black/70" />
                   <div>
                     <p className="font-bold">Phone</p>
-                    <p className="text-sm text-red-100">{siteConfig.contact.phone}</p>
+                    <p className="text-sm text-black/60">{siteConfig.contact.phone}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail className="h-5 w-5 mt-1 text-red-200" />
+                  <Mail className="h-5 w-5 mt-1 text-black/70" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p className="text-sm text-red-100">{siteConfig.contact.email}</p>
+                    <p className="text-sm text-black/60">{siteConfig.contact.email}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-md bg-zinc-900">
+            <Card className="border-none shadow-md bg-red-600 text-black">
               <CardHeader>
-                <CardTitle>Office Hours</CardTitle>
+                <CardTitle className="text-black">Office Hours</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Mon - Fri</span>
-                  <span className="font-medium">{siteConfig.contact.officeHours.monFri}</span>
+                  <span className="text-black/60 font-bold">Mon - Fri</span>
+                  <span className="font-bold">{siteConfig.contact.officeHours.monFri}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Saturday</span>
-                  <span className="font-medium">{siteConfig.contact.officeHours.sat}</span>
+                  <span className="text-black/60 font-bold">Saturday</span>
+                  <span className="font-bold">{siteConfig.contact.officeHours.sat}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Sunday</span>
-                  <span className="font-medium text-red-500">{siteConfig.contact.officeHours.sun}</span>
+                  <span className="text-black/60 font-bold">Sunday</span>
+                  <span className="font-bold text-black">{siteConfig.contact.officeHours.sun}</span>
                 </div>
               </CardContent>
             </Card>

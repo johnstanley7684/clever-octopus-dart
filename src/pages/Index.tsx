@@ -68,7 +68,7 @@ const Index = () => {
 
               <div className="flex flex-wrap justify-center gap-4 pt-4">
                 <Link to="/tickets">
-                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20">
+                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 text-black">
                     Get Tickets Now
                   </Button>
                 </Link>
@@ -85,17 +85,17 @@ const Index = () => {
         {/* Next Game Section */}
         <section className="pt-32 pb-12 bg-black text-white">
           <div className="container">
-            <div className="bg-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-zinc-800">
+            <div className="bg-red-600 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border-none text-black">
               <div className="text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                  <Badge className="bg-red-600 text-white animate-pulse">LIVE NOW</Badge>
-                  <p className="text-red-500 font-bold uppercase tracking-widest text-sm">Match Center</p>
+                  <Badge className="bg-black text-red-600 animate-pulse border-none">LIVE NOW</Badge>
+                  <p className="text-black font-bold uppercase tracking-widest text-sm">Match Center</p>
                 </div>
                 <h2 className="text-3xl font-bold">Raiders vs. Milton Menace</h2>
-                <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-slate-400">
+                <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-black/70">
                   <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-yellow-500" />
-                    <span className="font-bold text-white">4 - 2</span>
+                    <Zap className="h-4 w-4 text-black" />
+                    <span className="font-bold text-black">4 - 2</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4" />
@@ -105,21 +105,21 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-8">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-2">
-                    <Shield className="h-10 w-10 text-red-600" />
+                  <div className="w-20 h-20 bg-black/10 rounded-full flex items-center justify-center mb-2">
+                    <Shield className="h-10 w-10 text-black" />
                   </div>
                   <span className="font-bold">RAIDERS</span>
                 </div>
-                <div className="text-4xl font-black text-zinc-700 italic">VS</div>
+                <div className="text-4xl font-black text-black/20 italic">VS</div>
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-2">
-                    <Users className="h-10 w-10 text-slate-400" />
+                  <div className="w-20 h-20 bg-black/10 rounded-full flex items-center justify-center mb-2">
+                    <Users className="h-10 w-10 text-black/60" />
                   </div>
                   <span className="font-bold">MENACE</span>
                 </div>
               </div>
               <Link to="/match-center">
-                <Button className="rounded-full px-8 bg-white text-black hover:bg-slate-200 font-bold">
+                <Button className="rounded-full px-8 bg-black text-white hover:bg-zinc-900 font-bold">
                   Enter Match Center
                 </Button>
               </Link>
@@ -130,27 +130,27 @@ const Index = () => {
         {/* Newsletter Section */}
         <section className="py-24 bg-black">
           <div className="container">
-            <div className="bg-red-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+            <div className="bg-red-600 rounded-[3rem] p-12 md:p-20 text-black relative overflow-hidden">
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 opacity-10">
                 <Mail className="w-96 h-96" />
               </div>
               <div className="relative z-10 max-w-2xl">
                 <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">STAY IN THE RAID</h2>
-                <p className="text-xl text-red-100 mb-10 leading-relaxed">
+                <p className="text-xl text-black/80 mb-10 leading-relaxed">
                   Get exclusive news, ticket alerts, and behind-the-scenes content delivered straight to your inbox.
                 </p>
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
                   <Input 
                     type="email" 
                     placeholder="Enter your email" 
-                    className="h-14 rounded-full bg-white/10 border-white/20 text-white placeholder:text-red-200 px-8 focus-visible:ring-white"
+                    className="h-14 rounded-full bg-black/10 border-black/20 text-black placeholder:text-black/50 px-8 focus-visible:ring-black"
                     required
                   />
-                  <Button type="submit" size="lg" className="h-14 rounded-full px-10 bg-white text-red-600 hover:bg-red-50 font-bold">
+                  <Button type="submit" size="lg" className="h-14 rounded-full px-10 bg-black text-white hover:bg-zinc-900 font-bold">
                     Subscribe Now
                   </Button>
                 </form>
-                <p className="mt-6 text-sm text-red-200">
+                <p className="mt-6 text-sm text-black/60">
                   By subscribing, you agree to our Privacy Policy and to receive marketing emails.
                 </p>
               </div>
@@ -163,7 +163,7 @@ const Index = () => {
           <div className="container">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 space-y-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 font-bold text-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600 text-black font-bold text-sm">
                   <Smartphone className="h-4 w-4" />
                   <span>Mobile Experience</span>
                 </div>
@@ -175,8 +175,8 @@ const Index = () => {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="bg-zinc-900 p-2 rounded-lg shadow-sm">
-                      <Smartphone className="h-6 w-6 text-red-600" />
+                    <div className="bg-red-600 p-2 rounded-lg shadow-sm">
+                      <Smartphone className="h-6 w-6 text-black" />
                     </div>
                     <div>
                       <h4 className="font-bold text-white">Add to Home Screen</h4>
@@ -217,19 +217,19 @@ const Index = () => {
         <InstagramFeed />
 
         {/* CTA Section */}
-        <section className="py-24 bg-red-600 text-white">
+        <section className="py-24 bg-red-600 text-black">
           <div className="container text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">READY TO JOIN THE ROAR?</h2>
-            <p className="text-xl text-red-100 max-w-2xl mx-auto">
+            <p className="text-xl text-black/80 max-w-2xl mx-auto">
               Don't miss a single moment of the action. Season tickets and individual game passes are now available.
             </p>
             <div className="flex justify-center gap-4">
               <Link to="/tickets">
-                <Button size="lg" variant="secondary" className="rounded-full px-10 font-bold bg-white text-red-600 hover:bg-slate-100">
+                <Button size="lg" variant="secondary" className="rounded-full px-10 font-bold bg-black text-white hover:bg-zinc-900">
                   Season Tickets
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="rounded-full px-10 font-bold border-white text-white hover:bg-white hover:text-red-600">
+              <Button size="lg" variant="outline" className="rounded-full px-10 font-bold border-black text-black hover:bg-black hover:text-white">
                 Group Bookings
               </Button>
             </div>
