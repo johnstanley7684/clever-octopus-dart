@@ -1,14 +1,18 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { RefreshCw, Zap, CheckCircle2 } from 'lucide-react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { players } from '@/data/roster';
+import { fetchLiveStats } from '@/services/statsService';
+import { showSuccess, showError } from '@/utils/toast';
 
-// Sort players by points for the leaderboard
 const playerStats = [...players]
   .sort((a, b) => b.stats.pts - a.stats.pts)
   .slice(0, 15);
@@ -23,22 +27,59 @@ const seasonTrend = [
 ];
 
 const Stats = () => {
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [lastSync, setLastSync] = useState<string | null>(null);
+
+  const handleLiveSync = async () => {
+    setIsSyncing(true);
+    try {
+      await fetchLiveStats();
+      setLastSync(new Date().toLocaleTimeString());
+      showSuccess("Stats synchronized with OJHL Network!");
+    } catch (err) {
+      showError("Failed to sync live data. Check CORS settings.");
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow container py-12">
-        <div className="mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Official OJHL Statistics</h1>
-          <p className="text-slate-400">
-            Performance data for the Georgetown Raiders sourced from the official OJHL network.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+          <div>
+            <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Official OJHL Statistics</h1>
+            <p className="text-slate-400">
+              Performance data for the Georgetown Raiders sourced from the official OJHL network.
+            </p>
+          </div>
+          <div className="flex flex-col items-end gap-2">
+            <Button 
+              onClick={handleLiveSync} 
+              disabled={isSyncing}
+              className="bg-red-600 hover:bg-red-700 text-white rounded-full px-6 gap-2 font-bold"
+            >
+              <RefreshCw className={`h-4 w-4 ${isSyncing ? 'animate-spin' : ''}`} />
+              {isSyncing ? "Syncing..." : "Sync Live Stats"}
+            </Button>
+            {lastSync && (
+              <div className="flex items-center gap-1 text-[10px] text-green-500 font-bold uppercase tracking-widest">
+                <CheckCircle2 className="h-3 w-3" />
+                Last Sync: {lastSync}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <Card className="lg:col-span-2 border-none bg-zinc-900 shadow-md">
             <CardHeader>
-              <CardTitle className="text-white">Scoring Trends (Goals Per Game)</CardTitle>
+              <CardTitle className="text-white flex items-center gap-2">
+                <Zap className="h-5 w-5 text-red-600" />
+                Scoring Trends (Goals Per Game)
+              </CardTitle>
             </CardHeader>
             <CardContent className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
