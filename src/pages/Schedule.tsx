@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,7 +9,6 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Trophy, Clock } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
-import { showSuccess } from '@/utils/toast';
 
 const games = [
   { id: 1, opponent: "Milton Menace", date: "Sep 13, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
@@ -22,11 +22,19 @@ const games = [
 ];
 
 const Schedule = () => {
+  const navigate = useNavigate();
   const upcomingGames = games.filter(g => g.status === "Upcoming");
   const pastGames = games.filter(g => g.status === "Completed");
 
   const handleTicketPurchase = (opponent: string) => {
-    showSuccess(`Redirecting to secure checkout for Raiders vs. ${opponent}...`);
+    navigate('/checkout', { 
+      state: { 
+        item: { 
+          name: `Raiders vs. ${opponent} Ticket`, 
+          price: "$15.00" 
+        } 
+      } 
+    });
   };
 
   return (

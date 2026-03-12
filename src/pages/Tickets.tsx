@@ -8,7 +8,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check, Ticket, Star, Users, Trophy } from 'lucide-react';
-import { showSuccess } from '@/utils/toast';
 import { cn } from '@/lib/utils';
 
 const ticketTypes = [
@@ -30,7 +29,8 @@ const ticketTypes = [
     features: ["All Home Games"],
     color: "bg-blue-50 border-blue-200",
     popular: true,
-    buttonText: "Buy Season Pass"
+    buttonText: "Buy Season Pass",
+    path: "/checkout"
   }
 ];
 
@@ -38,10 +38,10 @@ const Tickets = () => {
   const navigate = useNavigate();
 
   const handleAction = (ticket: typeof ticketTypes[0]) => {
-    if (ticket.path) {
-      navigate(ticket.path);
+    if (ticket.name === "Season Pass") {
+      navigate('/checkout', { state: { item: { name: "Season Pass", price: "$400.00" } } });
     } else {
-      showSuccess(`Redirecting to secure checkout for ${ticket.name}...`);
+      navigate(ticket.path);
     }
   };
 

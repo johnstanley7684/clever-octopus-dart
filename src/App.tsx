@@ -19,6 +19,7 @@ import Shop from "./pages/Shop";
 import History from "./pages/History";
 import FAQ from "./pages/FAQ";
 import Dashboard from "./pages/Dashboard";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/history" element={<History />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
