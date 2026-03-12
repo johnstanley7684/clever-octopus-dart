@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Star, Users, Gift, PartyPopper } from 'lucide-react';
+import { Calendar, MapPin, Star, Users, Gift, PartyPopper, Heart } from 'lucide-react';
 
 const events = [
   {
@@ -54,8 +54,6 @@ const events = [
     icon: Star
   }
 ];
-
-import { Heart } from 'lucide-react';
 
 const SpecialEvents = () => {
   return (
@@ -121,26 +119,6 @@ const SpecialEvents = () => {
             </Card>
           ))}
         </div>
-
-        <section className="mt-24 bg-red-600 rounded-[3rem] p-12 md:p-20 text-white text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <div className="absolute top-10 left-10 animate-bounce">
-              <Star className="w-20 h-20" />
-            </div>
-            <div className="absolute bottom-10 right-10 animate-pulse">
-              <PartyPopper className="w-32 h-32" />
-            </div>
-          </div>
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">HOST YOUR OWN EVENT</h2>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Looking for a unique venue for a birthday party, corporate outing, or community gathering? Alcott Arena and the Raiders offer custom event packages.
-            </p>
-            <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-black text-white hover:bg-zinc-900">
-              Inquire About Bookings
-            </Button>
-          </div>
-        </section>
       </main>
 
       <Footer />
