@@ -22,7 +22,7 @@ const Footer = () => {
               <span className="text-2xl font-bold tracking-tighter text-white">RAIDERS</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              The official home of the Georgetown Raiders Hockey Club. Dedicated to excellence on and off the ice since 1995.
+              Celebrating over 50 years as the Georgetown Raiders Hockey Club.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 cursor-pointer hover:text-blue-400 transition-colors" />
