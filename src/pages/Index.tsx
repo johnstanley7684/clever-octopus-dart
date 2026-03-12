@@ -4,10 +4,9 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScoreTicker from '@/components/ScoreTicker';
+import InstagramFeed from '@/components/InstagramFeed';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Calendar, Trophy, Users, ArrowRight, Shield } from 'lucide-react';
+import { Calendar, Trophy, Users, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -118,47 +117,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Featured News */}
-        <section className="py-24 bg-slate-50">
-          <div className="container">
-            <div className="flex justify-between items-end mb-12">
-              <div>
-                <h2 className="text-4xl font-bold tracking-tight">Latest News</h2>
-                <p className="text-muted-foreground mt-2">Stay updated with everything Raiders.</p>
-              </div>
-              <Link to="/news">
-                <Button variant="ghost" className="group">
-                  View All News <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: "Raiders Clinch Playoff Spot", date: "Oct 5, 2024", image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80&w=600" },
-                { title: "New Training Facility Opens", date: "Oct 2, 2024", image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=600" },
-                { title: "Community Outreach Program", date: "Sep 28, 2024", image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=600" },
-              ].map((news, i) => (
-                <Card key={i} className="overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 group">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={news.image} 
-                      alt={news.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <p className="text-sm text-blue-600 font-bold mb-2">{news.date}</p>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-blue-600 transition-colors">{news.title}</h3>
-                    <Button variant="link" className="p-0 h-auto text-slate-900 font-bold">
-                      Read More
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Instagram Feed Section */}
+        <InstagramFeed />
 
         {/* CTA Section */}
         <section className="py-24 bg-blue-600 text-white">
