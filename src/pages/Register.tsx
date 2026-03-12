@@ -8,21 +8,21 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { LogIn, Mail, Lock, ArrowRight } from 'lucide-react';
+import { UserPlus, Mail, Lock, User, ArrowRight } from 'lucide-react';
 import { showSuccess } from '@/utils/toast';
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate login
+    // Simulate registration
     setTimeout(() => {
       setIsLoading(false);
-      showSuccess("Welcome back to the Raid!");
+      showSuccess("Account created! Welcome to the Raiders family.");
       navigate('/dashboard');
     }, 1500);
   };
@@ -39,22 +39,35 @@ const Login = () => {
               alt="Raiders Logo" 
               className="h-24 w-auto mx-auto mb-6"
             />
-            <h1 className="text-3xl font-black tracking-tighter text-white">MEMBER LOGIN</h1>
-            <p className="text-slate-400 mt-2">Access your exclusive Raiders content and tickets.</p>
+            <h1 className="text-3xl font-black tracking-tighter text-white">JOIN THE RAID</h1>
+            <p className="text-slate-400 mt-2">Create an account to access exclusive content and manage your tickets.</p>
           </div>
 
           <Card className="border-none shadow-2xl bg-red-600 text-white">
             <CardHeader>
               <CardTitle className="text-white flex items-center gap-2">
-                <LogIn className="h-5 w-5" />
-                Sign In
+                <UserPlus className="h-5 w-5" />
+                Create Account
               </CardTitle>
               <CardDescription className="text-white/70">
-                Enter your credentials to access your account.
+                Fill in your details to get started.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleLogin} className="space-y-4">
+              <form onSubmit={handleRegister} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-white font-bold">Full Name</Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/50" />
+                    <Input 
+                      id="name" 
+                      type="text" 
+                      placeholder="John Doe" 
+                      className="pl-10 bg-black/10 border-black/20 text-white placeholder:text-white/50"
+                      required 
+                    />
+                  </div>
+                </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-white font-bold">Email Address</Label>
                   <div className="relative">
@@ -69,12 +82,7 @@ const Login = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <Label htmlFor="password" className="text-white font-bold">Password</Label>
-                    <button type="button" className="text-xs text-white/70 hover:text-white underline">
-                      Forgot password?
-                    </button>
-                  </div>
+                  <Label htmlFor="password" className="text-white font-bold">Password</Label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/50" />
                     <Input 
@@ -91,15 +99,15 @@ const Login = () => {
                   disabled={isLoading}
                   className="w-full rounded-full bg-black text-white hover:bg-zinc-900 h-12 font-bold mt-4"
                 >
-                  {isLoading ? "Signing in..." : "Sign In"}
+                  {isLoading ? "Creating account..." : "Create Account"}
                 </Button>
               </form>
             </CardContent>
             <CardFooter className="flex flex-col space-y-4 border-t border-black/10 pt-6">
               <div className="text-center text-sm text-white/70">
-                Don't have an account?{" "}
-                <Link to="/register" className="text-white font-bold hover:underline">
-                  Create one now
+                Already have an account?{" "}
+                <Link to="/login" className="text-white font-bold hover:underline">
+                  Sign In
                 </Link>
               </div>
             </CardFooter>
@@ -120,4 +128,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

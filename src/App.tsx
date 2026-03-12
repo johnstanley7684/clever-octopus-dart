@@ -23,6 +23,7 @@ import Dashboard from "./pages/Dashboard";
 import Checkout from "./pages/Checkout";
 import MatchCenter from "./pages/MatchCenter";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
