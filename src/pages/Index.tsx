@@ -8,7 +8,7 @@ import InstagramFeed from '@/components/InstagramFeed';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Trophy, Users, Shield, Smartphone, Apple, PlayCircle, Mail, Zap } from 'lucide-react';
+import { Calendar, Trophy, Users, Shield, Smartphone, Apple, PlayCircle, Mail, Zap, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { showSuccess } from '@/utils/toast';
 
