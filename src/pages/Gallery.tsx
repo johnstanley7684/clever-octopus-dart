@@ -20,13 +20,13 @@ const photos = [
 
 const Gallery = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow container py-12">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4">Photo Gallery</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Photo Gallery</h1>
+          <p className="text-slate-400 max-w-2xl mx-auto">
             Capturing the intensity, the passion, and the moments that define Raiders Hockey.
           </p>
         </div>
@@ -35,15 +35,15 @@ const Gallery = () => {
           {photos.map((photo) => (
             <Dialog key={photo.id}>
               <DialogTrigger asChild>
-                <Card className="overflow-hidden cursor-pointer group border-none shadow-md hover:shadow-xl transition-all duration-300">
+                <Card className="overflow-hidden cursor-pointer group border-none bg-zinc-900 shadow-md hover:shadow-xl transition-all duration-300">
                   <div className="relative aspect-[4/3]">
                     <img 
                       src={photo.url} 
                       alt={photo.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                      <span className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">{photo.category}</span>
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                      <span className="text-red-500 text-xs font-bold uppercase tracking-wider mb-1">{photo.category}</span>
                       <h3 className="text-white font-bold text-lg">{photo.title}</h3>
                     </div>
                   </div>
@@ -51,9 +51,9 @@ const Gallery = () => {
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none">
                 <img src={photo.url} alt={photo.title} className="w-full h-auto rounded-lg" />
-                <div className="p-4 bg-white/90 backdrop-blur-sm rounded-b-lg">
-                  <h3 className="text-xl font-bold">{photo.title}</h3>
-                  <p className="text-muted-foreground">{photo.category}</p>
+                <div className="p-4 bg-zinc-900/90 backdrop-blur-sm rounded-b-lg">
+                  <h3 className="text-xl font-bold text-white">{photo.title}</h3>
+                  <p className="text-slate-400">{photo.category}</p>
                 </div>
               </DialogContent>
             </Dialog>
