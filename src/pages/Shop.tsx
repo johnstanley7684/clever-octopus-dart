@@ -33,25 +33,25 @@ const Shop = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow container py-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <h1 className="text-4xl font-extrabold tracking-tight mb-4">Titans Fan Shop</h1>
-            <p className="text-muted-foreground">Gear up and show your pride for the blue and white.</p>
+            <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Titans Fan Shop</h1>
+            <p className="text-slate-400">Gear up and show your pride for the blue and white.</p>
           </div>
           <div className="flex gap-2">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
               <input 
                 type="text" 
                 placeholder="Search gear..." 
-                className="pl-10 pr-4 py-2 rounded-full border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-64"
+                className="pl-10 pr-4 py-2 rounded-full border border-zinc-800 bg-zinc-900 text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-600 w-full md:w-64"
               />
             </div>
-            <Button variant="outline" size="icon" className="rounded-full">
+            <Button variant="outline" size="icon" className="rounded-full border-zinc-800 text-white hover:bg-zinc-900">
               <Filter className="h-4 w-4" />
             </Button>
           </div>
@@ -59,8 +59,8 @@ const Shop = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((product) => (
-            <Card key={product.id} className="overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col">
-              <div className="relative aspect-square overflow-hidden bg-slate-100">
+            <Card key={product.id} className="overflow-hidden border-none bg-zinc-900 shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col">
+              <div className="relative aspect-square overflow-hidden bg-zinc-800">
                 <img 
                   src={product.image} 
                   alt={product.name} 
@@ -68,24 +68,24 @@ const Shop = () => {
                 />
                 {product.tag && (
                   <div className="absolute top-4 left-4">
-                    <Badge className="bg-blue-600 text-white border-none">{product.tag}</Badge>
+                    <Badge className="bg-red-600 text-white border-none">{product.tag}</Badge>
                   </div>
                 )}
-                <button className="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:text-red-500">
+                <button className="absolute top-4 right-4 p-2 bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:text-red-500 text-white">
                   <Heart className="h-4 w-4" />
                 </button>
               </div>
               <CardContent className="p-6 flex-grow">
-                <p className="text-xs text-muted-foreground font-bold mb-1 uppercase tracking-wider">{product.category}</p>
-                <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors">
+                <p className="text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">{product.category}</p>
+                <h3 className="text-lg font-bold mb-2 text-white group-hover:text-red-600 transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-xl font-black text-slate-900">{product.price}</p>
+                <p className="text-xl font-black text-white">{product.price}</p>
               </CardContent>
               <CardFooter className="p-6 pt-0">
                 <Button 
                   onClick={() => handleAddToCart(product)}
-                  className="w-full rounded-full gap-2 bg-slate-900 hover:bg-blue-600 transition-colors"
+                  className="w-full rounded-full gap-2 bg-red-600 hover:bg-red-700 text-white transition-colors"
                 >
                   <ShoppingCart className="h-4 w-4" />
                   Add to Cart
