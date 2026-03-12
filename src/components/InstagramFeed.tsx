@@ -28,10 +28,10 @@ const InstagramFeed = () => {
               </div>
               <h2 className="text-4xl font-bold tracking-tight">Follow the Raid</h2>
             </div>
-            <p className="text-muted-foreground">Get exclusive behind-the-scenes content @georgetownraiders</p>
+            <p className="text-muted-foreground">Get exclusive behind-the-scenes content @ojhlraiders</p>
           </div>
           <a 
-            href="https://www.instagram.com/georgetownraiders/" 
+            href="https://www.instagram.com/ojhlraiders/" 
             target="_blank" 
             rel="noopener noreferrer"
           >
