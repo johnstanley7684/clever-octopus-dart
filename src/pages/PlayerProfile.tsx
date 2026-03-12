@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Shield, Zap, Target, Activity } from 'lucide-react';
+import { ArrowLeft, Shield, Zap, Target, Activity, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { players } from '@/data/roster';
 
@@ -27,8 +27,8 @@ const PlayerProfile = () => {
             </Link>
             
             <div className="flex flex-col md:flex-row gap-12 items-center md:items-end">
-              <div className="w-64 h-80 rounded-2xl overflow-hidden border-4 border-blue-600 shadow-2xl flex-shrink-0">
-                <img src={player.image} alt={player.name} className="w-full h-full object-cover" />
+              <div className="w-64 h-80 rounded-2xl overflow-hidden border-4 border-blue-600 shadow-2xl flex-shrink-0 bg-white p-4">
+                <img src={player.image} alt={player.name} className="w-full h-full object-contain" />
               </div>
               <div className="space-y-4 text-center md:text-left">
                 <Badge className="bg-blue-600 text-white px-4 py-1 text-lg font-bold">#{player.number}</Badge>
@@ -37,6 +37,7 @@ const PlayerProfile = () => {
                   <span>{player.position}</span>
                   <span>{player.height} / {player.weight}</span>
                   <span>Shoots: {player.shot}</span>
+                  <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {player.hometown}</span>
                 </div>
               </div>
             </div>
@@ -77,20 +78,21 @@ const PlayerProfile = () => {
             <div className="space-y-8">
               <Card className="border-none shadow-lg bg-white">
                 <CardHeader>
-                  <CardTitle>Career Highlights</CardTitle>
+                  <CardTitle>Player Info</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {[
-                    "2023 All-Star Selection",
-                    "Team MVP (2022)",
-                    "League Leading Scorer (Oct 2024)",
-                    "100th Career Goal (Sep 2024)"
-                  ].map((highlight, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                      <span>{highlight}</span>
-                    </div>
-                  ))}
+                  <div className="flex justify-between text-sm border-b pb-2">
+                    <span className="text-muted-foreground">Hometown</span>
+                    <span className="font-bold">{player.hometown}</span>
+                  </div>
+                  <div className="flex justify-between text-sm border-b pb-2">
+                    <span className="text-muted-foreground">Position</span>
+                    <span className="font-bold">{player.position}</span>
+                  </div>
+                  <div className="flex justify-between text-sm border-b pb-2">
+                    <span className="text-muted-foreground">Shoots</span>
+                    <span className="font-bold">{player.shot}</span>
+                  </div>
                 </CardContent>
               </Card>
 
