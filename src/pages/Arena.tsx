@@ -57,24 +57,13 @@ const Arena = () => {
                   <Utensils className="text-blue-600" />
                   Dining & Concessions
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="border-none shadow-md">
-                    <CardHeader>
-                      <CardTitle className="text-lg">The Blue Line Grill</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">Premium burgers, artisanal pizzas, and local craft beers. Located near Section 104.</p>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-none shadow-md">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Raider Treats</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">Classic arena snacks: popcorn, nachos, and our famous "Raider Pretzel". Available at all levels.</p>
-                    </CardContent>
-                  </Card>
-                </div>
+                <Card className="border-none shadow-md">
+                  <CardContent className="p-8 text-center">
+                    <p className="text-lg font-medium text-muted-foreground">
+                      Arena snack bar available for your food needs.
+                    </p>
+                  </CardContent>
+                </Card>
               </section>
 
               <section>
