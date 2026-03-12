@@ -7,21 +7,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
-const players = [
-  { id: "31", name: "Alex 'The Wall' Miller", number: "31", position: "Goalie", height: "6'2\"", weight: "195 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=400" },
-  { id: "44", name: "Erik Johansson", number: "44", position: "Defense", height: "6'4\"", weight: "220 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=400" },
-  { id: "19", name: "Marcus Vane", number: "19", position: "Center", height: "6'0\"", weight: "185 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1512719994953-eabf50895df7?auto=format&fit=crop&q=80&w=400" },
-  { id: "97", name: "Connor Reed", number: "97", position: "Left Wing", height: "6'1\"", weight: "190 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1526232759583-26f173565548?auto=format&fit=crop&q=80&w=400" },
-  { id: "8", name: "Tyler Stone", number: "8", position: "Right Wing", height: "5'11\"", weight: "180 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1518611012118-296072bb58c4?auto=format&fit=crop&q=80&w=400" },
-  { id: "27", name: "David Chen", number: "27", position: "Defense", height: "6'3\"", weight: "210 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" },
-];
-
-const staff = [
-  { id: 1, name: "Robert 'Buck' Wilson", role: "Head Coach", experience: "15 Seasons", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" },
-  { id: 2, name: "Sarah Jenkins", role: "Assistant Coach", experience: "8 Seasons", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400" },
-  { id: 3, name: "Mike Thompson", role: "General Manager", experience: "20 Seasons", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" },
-];
+import { players, staff } from '@/data/roster';
 
 const Roster = () => {
   return (
