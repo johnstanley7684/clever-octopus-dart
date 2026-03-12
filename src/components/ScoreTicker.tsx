@@ -4,11 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const scores = [
-  { home: "RAIDERS", away: "WOLVES", score: "4 - 2", status: "FINAL", date: "OCT 5" },
-  { home: "SHARKS", away: "RAIDERS", score: "3 - 1", status: "FINAL", date: "OCT 1" },
-  { home: "RAIDERS", away: "BEARS", score: "5 - 0", status: "FINAL", date: "SEP 28" },
-  { home: "KINGS", away: "RAVENS", score: "2 - 3", status: "FINAL", date: "OCT 6" },
-  { home: "BLIZZARDS", away: "WOLVES", score: "1 - 4", status: "FINAL", date: "OCT 6" },
+  { home: "RAIDERS", away: "MENACE", score: "3 - 2", status: "FINAL", date: "OCT 18" },
+  { home: "COUGARS", away: "BLADES", score: "4 - 1", status: "FINAL", date: "OCT 18" },
+  { home: "BLUES", away: "GOLDEN HAWKS", score: "2 - 5", status: "FINAL", date: "OCT 17" },
+  { home: "RAIDERS", away: "COUGARS", score: "5 - 4", status: "FINAL (OT)", date: "OCT 15" },
+  { home: "DUKES", away: "PANTHERS", score: "3 - 3", status: "FINAL (SO)", date: "OCT 15" },
+  { home: "99ERS", away: "MENACE", score: "1 - 6", status: "FINAL", date: "OCT 14" },
 ];
 
 const ScoreTicker = () => {
@@ -16,8 +17,8 @@ const ScoreTicker = () => {
     <div className="bg-slate-950 text-white py-2 overflow-hidden border-b border-slate-800 hidden md:block">
       <motion.div 
         className="flex whitespace-nowrap"
-        animate={{ x: [0, -1000] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        animate={{ x: [0, -1200] }}
+        transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
       >
         {[...scores, ...scores].map((game, i) => (
           <div key={i} className="inline-flex items-center px-8 border-r border-slate-800 last:border-r-0">
