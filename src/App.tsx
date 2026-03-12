@@ -17,8 +17,6 @@ import Standings from "./pages/Standings";
 import Arena from "./pages/Arena";
 import Shop from "./pages/Shop";
 import History from "./pages/History";
-import FanZone from "./pages/FanZone";
-import Youth from "./pages/Youth";
 import FAQ from "./pages/FAQ";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
@@ -46,8 +44,6 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/history" element={<History />} />
-          <Route path="/fan-zone" element={<FanZone />} />
-          <Route path="/youth" element={<Youth />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />

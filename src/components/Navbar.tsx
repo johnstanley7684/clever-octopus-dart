@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, GraduationCap, HelpCircle, LayoutDashboard } from 'lucide-react';
+import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, HelpCircle, LayoutDashboard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -17,8 +17,6 @@ const Navbar = () => {
     { name: 'Stats', path: '/stats', icon: BarChart3 },
     { name: 'Standings', path: '/standings', icon: ListOrdered },
     { name: 'News', path: '/news', icon: Newspaper },
-    { name: 'Fan Zone', path: '/fan-zone', icon: Heart },
-    { name: 'Youth', path: '/youth', icon: GraduationCap },
     { name: 'Arena', path: '/arena', icon: Map },
     { name: 'Shop', path: '/shop', icon: ShoppingBag },
     { name: 'FAQ', path: '/faq', icon: HelpCircle },
