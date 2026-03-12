@@ -25,6 +25,7 @@ import MatchCenter from "./pages/MatchCenter";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SpecialEvents from "./pages/SpecialEvents";
+import Chatroom from "./pages/Chatroom";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/match-center" element={<MatchCenter />} />
+            <Route path="/special-events" element={<SpecialEvents />} />
+            <Route path="/chatroom" element={<Chatroom />} />
             <Route path="/roster" element={<Roster />} />
             <Route path="/roster/:id" element={<PlayerProfile />} />
             <Route path="/stats" element={<Stats />} />
@@ -57,7 +60,6 @@ const App = () => (
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/special-events" element={<SpecialEvents />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
