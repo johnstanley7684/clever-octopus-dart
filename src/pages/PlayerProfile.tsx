@@ -95,12 +95,6 @@ const PlayerProfile = () => {
                   </div>
                 </CardContent>
               </Card>
-
-              <div className="bg-red-600 rounded-2xl p-8 text-white shadow-xl shadow-red-600/10">
-                <h3 className="text-xl font-bold mb-4">Fan Gear</h3>
-                <p className="text-sm text-white/80 mb-6">Get your official {player.name} jersey today.</p>
-                <Button className="w-full bg-black text-white hover:bg-zinc-900 rounded-full font-bold">Shop Jersey</Button>
-              </div>
             </div>
           </div>
         </div>
