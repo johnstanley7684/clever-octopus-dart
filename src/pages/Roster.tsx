@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,12 +9,12 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const players = [
-  { id: 1, name: "Alex 'The Wall' Miller", number: "31", position: "Goalie", height: "6'2\"", weight: "195 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=400" },
-  { id: 2, name: "Erik Johansson", number: "44", position: "Defense", height: "6'4\"", weight: "220 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=400" },
-  { id: 3, name: "Marcus Vane", number: "19", position: "Center", height: "6'0\"", weight: "185 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1512719994953-eabf50895df7?auto=format&fit=crop&q=80&w=400" },
-  { id: 4, name: "Connor Reed", number: "97", position: "Left Wing", height: "6'1\"", weight: "190 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1526232759583-26f173565548?auto=format&fit=crop&q=80&w=400" },
-  { id: 5, name: "Tyler Stone", number: "8", position: "Right Wing", height: "5'11\"", weight: "180 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1518611012118-296072bb58c4?auto=format&fit=crop&q=80&w=400" },
-  { id: 6, name: "David Chen", number: "27", position: "Defense", height: "6'3\"", weight: "210 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" },
+  { id: "31", name: "Alex 'The Wall' Miller", number: "31", position: "Goalie", height: "6'2\"", weight: "195 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=400" },
+  { id: "44", name: "Erik Johansson", number: "44", position: "Defense", height: "6'4\"", weight: "220 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=400" },
+  { id: "19", name: "Marcus Vane", number: "19", position: "Center", height: "6'0\"", weight: "185 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1512719994953-eabf50895df7?auto=format&fit=crop&q=80&w=400" },
+  { id: "97", name: "Connor Reed", number: "97", position: "Left Wing", height: "6'1\"", weight: "190 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1526232759583-26f173565548?auto=format&fit=crop&q=80&w=400" },
+  { id: "8", name: "Tyler Stone", number: "8", position: "Right Wing", height: "5'11\"", weight: "180 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1518611012118-296072bb58c4?auto=format&fit=crop&q=80&w=400" },
+  { id: "27", name: "David Chen", number: "27", position: "Defense", height: "6'3\"", weight: "210 lbs", shot: "Left", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" },
 ];
 
 const staff = [
@@ -46,44 +47,46 @@ const Roster = () => {
           <TabsContent value="players" className="animate-in fade-in-50 duration-500">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {players.map((player) => (
-                <Card key={player.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none bg-white">
-                  <div className="relative h-80 overflow-hidden">
-                    <img 
-                      src={player.image} 
-                      alt={player.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge className="text-2xl font-bold px-3 py-1 bg-primary/90 backdrop-blur-sm">
-                        #{player.number}
-                      </Badge>
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                      <h3 className="text-2xl font-bold text-white">{player.name}</h3>
-                      <p className="text-blue-300 font-medium">{player.position}</p>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="space-y-1">
-                        <p className="text-muted-foreground">Height</p>
-                        <p className="font-semibold">{player.height}</p>
+                <Link key={player.id} to={`/roster/${player.id}`}>
+                  <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none bg-white cursor-pointer">
+                    <div className="relative h-80 overflow-hidden">
+                      <img 
+                        src={player.image} 
+                        alt={player.name} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <Badge className="text-2xl font-bold px-3 py-1 bg-primary/90 backdrop-blur-sm">
+                          #{player.number}
+                        </Badge>
                       </div>
-                      <div className="space-y-1">
-                        <p className="text-muted-foreground">Weight</p>
-                        <p className="font-semibold">{player.weight}</p>
-                      </div>
-                      <div className="space-y-1">
-                        <p className="text-muted-foreground">Shot</p>
-                        <p className="font-semibold">{player.shot}</p>
-                      </div>
-                      <div className="space-y-1">
-                        <p className="text-muted-foreground">Status</p>
-                        <Badge variant="outline" className="text-green-600 border-green-200 bg-green-50">Active</Badge>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <h3 className="text-2xl font-bold text-white">{player.name}</h3>
+                        <p className="text-blue-300 font-medium">{player.position}</p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-6">
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="space-y-1">
+                          <p className="text-muted-foreground">Height</p>
+                          <p className="font-semibold">{player.height}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-muted-foreground">Weight</p>
+                          <p className="font-semibold">{player.weight}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-muted-foreground">Shot</p>
+                          <p className="font-semibold">{player.shot}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-muted-foreground">Profile</p>
+                          <span className="text-blue-600 font-bold">View Stats →</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </TabsContent>

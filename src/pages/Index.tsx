@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScoreTicker from '@/components/ScoreTicker';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,6 +13,7 @@ import { Link } from 'react-router-dom';
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScoreTicker />
       <Navbar />
       
       <main className="flex-grow">
@@ -36,12 +38,16 @@ const Index = () => {
                 Experience the speed, the power, and the glory. Join us at the Titan Memorial Arena for an unforgettable season.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button size="lg" className="rounded-full px-8 text-lg font-bold bg-blue-600 hover:bg-blue-700">
-                  Buy Tickets
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-8 text-lg font-bold border-white text-white hover:bg-white hover:text-black">
-                  View Schedule
-                </Button>
+                <Link to="/tickets">
+                  <Button size="lg" className="rounded-full px-8 text-lg font-bold bg-blue-600 hover:bg-blue-700">
+                    Buy Tickets
+                  </Button>
+                </Link>
+                <Link to="/schedule">
+                  <Button size="lg" variant="outline" className="rounded-full px-8 text-lg font-bold border-white text-white hover:bg-white hover:text-black">
+                    View Schedule
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -80,9 +86,11 @@ const Index = () => {
                   <span className="font-bold">WOLVES</span>
                 </div>
               </div>
-              <Button className="rounded-full px-8 bg-white text-black hover:bg-slate-200">
-                Get Tickets
-              </Button>
+              <Link to="/tickets">
+                <Button className="rounded-full px-8 bg-white text-black hover:bg-slate-200">
+                  Get Tickets
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -95,9 +103,11 @@ const Index = () => {
                 <h2 className="text-4xl font-bold tracking-tight">Latest News</h2>
                 <p className="text-muted-foreground mt-2">Stay updated with everything Titans.</p>
               </div>
-              <Button variant="ghost" className="group">
-                View All News <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Link to="/news">
+                <Button variant="ghost" className="group">
+                  View All News <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -135,9 +145,11 @@ const Index = () => {
               Don't miss a single moment of the action. Season tickets and individual game passes are now available.
             </p>
             <div className="flex justify-center gap-4">
-              <Button size="lg" variant="secondary" className="rounded-full px-10 font-bold">
-                Season Tickets
-              </Button>
+              <Link to="/tickets">
+                <Button size="lg" variant="secondary" className="rounded-full px-10 font-bold">
+                  Season Tickets
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="rounded-full px-10 font-bold border-white text-white hover:bg-white hover:text-blue-600">
                 Group Bookings
               </Button>
