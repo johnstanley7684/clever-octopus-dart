@@ -30,7 +30,7 @@ export interface Staff {
 const defaultStats = { gp: 0, g: 0, a: 0, pts: 0, pim: 0, plusMinus: 0 };
 const defaultBio = "A dedicated member of the Georgetown Raiders, committed to excellence on and off the ice.";
 const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
-const staffPlaceholder = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400";
+const staffLogoUrl = "http://www.georgetownraiders.com/pics/georgetown logo.png";
 
 export const players: Player[] = [
   { id: "2", name: "CALVIN ILKAY", number: "2", position: "DEFENCE", height: "6'2", weight: "152 lbs", shot: "Left", hometown: "Georgetown", image: logoUrl, bio: defaultBio, stats: defaultStats },
@@ -58,27 +58,27 @@ export const players: Player[] = [
 ];
 
 export const staff: Staff[] = [
-  { id: "s1", name: "Ted Puccini", role: "Governor", experience: "Management", image: staffPlaceholder },
-  { id: "s2", name: "Chris Thompson", role: "General Manager", experience: "Management", image: staffPlaceholder },
-  { id: "s3", name: "Nick Rotondi", role: "Director of Hockey Operations", experience: "Management", image: staffPlaceholder },
-  { id: "s4", name: "Jeff Angelidis", role: "Head Coach", experience: "Coaching", image: staffPlaceholder },
-  { id: "s5", name: "Mark Biesenthal", role: "Assistant Coach", experience: "Coaching", image: staffPlaceholder },
-  { id: "s6", name: "Navinder Biln", role: "Assistant Coach", experience: "Coaching", image: staffPlaceholder },
-  { id: "s7", name: "Nick Dahan", role: "Goalie Coach", experience: "Coaching", image: staffPlaceholder },
-  { id: "s8", name: "Dana Flatt", role: "Athletic Therapist", experience: "Medical", image: staffPlaceholder },
-  { id: "s9", name: "Matthew Taylor", role: "Head Equipment Manager", experience: "Operations", image: staffPlaceholder },
-  { id: "s10", name: "Rina Atkinson", role: "Game Day Coordinator/Entry", experience: "Operations", image: staffPlaceholder },
-  { id: "s11", name: "Wayne Webster", role: "Game Day Operations/Sponsorship", experience: "Operations", image: staffPlaceholder },
-  { id: "s12", name: "Sam Hilson", role: "Content Creator", experience: "Media", image: staffPlaceholder },
-  { id: "s13", name: "Alan Corkum", role: "Play by Play Announcer", experience: "Media", image: staffPlaceholder },
-  { id: "s14", name: "Gary Morrison", role: "Camera Operator/Flohockey", experience: "Media", image: staffPlaceholder },
-  { id: "s15", name: "Madison Yacynuk", role: "Game Day Intern", experience: "Intern", image: staffPlaceholder },
-  { id: "s16", name: "Matthew Elogio", role: "Game Day Intern", experience: "Intern", image: staffPlaceholder },
-  { id: "s17", name: "Alex Pincente", role: "Game Day Intern", experience: "Intern", image: staffPlaceholder },
-  { id: "s18", name: "Maghfoor Ahmad", role: "Game Day Volunteer", experience: "Volunteer", image: staffPlaceholder },
-  { id: "s19", name: "Mike Elson", role: "Head Scout", experience: "Scouting", image: staffPlaceholder },
-  { id: "s20", name: "David Ciss", role: "Regional Scout", experience: "Scouting", image: staffPlaceholder },
-  { id: "s21", name: "Mitchell Skilton", role: "Regional Scout", experience: "Scouting", image: staffPlaceholder },
-  { id: "s22", name: "Jesse Candela", role: "Regional Scout", experience: "Scouting", image: staffPlaceholder },
-  { id: "s23", name: "Cameron Cook", role: "Regional Scout", experience: "Scouting", image: staffPlaceholder },
+  { id: "s1", name: "Ted Puccini", role: "Governor", experience: "Management", image: staffLogoUrl },
+  { id: "s2", name: "Chris Thompson", role: "General Manager", experience: "Management", image: staffLogoUrl },
+  { id: "s3", name: "Nick Rotondi", role: "Director of Hockey Operations", experience: "Management", image: staffLogoUrl },
+  { id: "s4", name: "Jeff Angelidis", role: "Head Coach", experience: "Coaching", image: staffLogoUrl },
+  { id: "s5", name: "Mark Biesenthal", role: "Assistant Coach", experience: "Coaching", image: staffLogoUrl },
+  { id: "s6", name: "Navinder Biln", role: "Assistant Coach", experience: "Coaching", image: staffLogoUrl },
+  { id: "s7", name: "Nick Dahan", role: "Goalie Coach", experience: "Coaching", image: staffLogoUrl },
+  { id: "s8", name: "Dana Flatt", role: "Athletic Therapist", experience: "Medical", image: staffLogoUrl },
+  { id: "s9", name: "Matthew Taylor", role: "Head Equipment Manager", experience: "Operations", image: staffLogoUrl },
+  { id: "s10", name: "Rina Atkinson", role: "Game Day Coordinator/Entry", experience: "Operations", image: staffLogoUrl },
+  { id: "s11", name: "Wayne Webster", role: "Game Day Operations/Sponsorship", experience: "Operations", image: staffLogoUrl },
+  { id: "s12", name: "Sam Hilson", role: "Content Creator", experience: "Media", image: staffLogoUrl },
+  { id: "s13", name: "Alan Corkum", role: "Play by Play Announcer", experience: "Media", image: staffLogoUrl },
+  { id: "s14", name: "Gary Morrison", role: "Camera Operator/Flohockey", experience: "Media", image: staffLogoUrl },
+  { id: "s15", name: "Madison Yacynuk", role: "Game Day Intern", experience: "Intern", image: staffLogoUrl },
+  { id: "s16", name: "Matthew Elogio", role: "Game Day Intern", experience: "Intern", image: staffLogoUrl },
+  { id: "s17", name: "Alex Pincente", role: "Game Day Intern", experience: "Intern", image: staffLogoUrl },
+  { id: "s18", name: "Maghfoor Ahmad", role: "Game Day Volunteer", experience: "Volunteer", image: staffLogoUrl },
+  { id: "s19", name: "Mike Elson", role: "Head Scout", experience: "Scouting", image: staffLogoUrl },
+  { id: "s20", name: "David Ciss", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
+  { id: "s21", name: "Mitchell Skilton", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
+  { id: "s22", name: "Jesse Candela", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
+  { id: "s23", name: "Cameron Cook", role: "Regional Scout", experience: "Scouting", image: staffLogoUrl },
 ];
