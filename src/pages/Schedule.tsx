@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Trophy, Clock } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
+import { showSuccess } from '@/utils/toast';
 
 const games = [
   { id: 1, opponent: "Milton Menace", date: "Sep 13, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
@@ -23,6 +24,10 @@ const games = [
 const Schedule = () => {
   const upcomingGames = games.filter(g => g.status === "Upcoming");
   const pastGames = games.filter(g => g.status === "Completed");
+
+  const handleTicketPurchase = (opponent: string) => {
+    showSuccess(`Redirecting to secure checkout for Raiders vs. ${opponent}...`);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -72,7 +77,10 @@ const Schedule = () => {
                           <span>{game.venue}</span>
                         </div>
                       </div>
-                      <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors">
+                      <button 
+                        onClick={() => handleTicketPurchase(game.opponent)}
+                        className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors"
+                      >
                         Tickets
                       </button>
                     </div>
