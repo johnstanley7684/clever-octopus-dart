@@ -57,7 +57,7 @@ const Index = () => {
               </div>
 
               <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-medium">
-                The legacy continues. Join the roar at the Raiders Memorial Arena for the 2024/25 season.
+                The Legacy continues, Join us in the Raid at Alcott Arena for the 2026/27 season!
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 pt-4">

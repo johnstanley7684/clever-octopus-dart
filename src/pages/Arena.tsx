@@ -18,11 +18,11 @@ const Arena = () => {
         <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=1920" 
-            alt="Raiders Memorial Arena" 
+            alt="Alcott Arena" 
             className="absolute inset-0 w-full h-full object-cover brightness-50"
           />
           <div className="relative z-10 text-center text-white container">
-            <h1 className="text-5xl font-black tracking-tighter mb-4">RAIDERS MEMORIAL ARENA</h1>
+            <h1 className="text-5xl font-black tracking-tighter mb-4">ALCOTT ARENA</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto">The loudest house in the league. Home of the Raiders since 1995.</p>
           </div>
         </div>
@@ -37,7 +37,7 @@ const Arena = () => {
                   About the Venue
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Raiders Memorial Arena is a state-of-the-art multi-purpose facility located in the heart of Georgetown. With a seating capacity of 15,000 for hockey games, it offers an intimate yet electric atmosphere that has become legendary among fans and players alike.
+                  Alcott Arena is a state-of-the-art multi-purpose facility located in the heart of Georgetown. With a seating capacity of 15,000 for hockey games, it offers an intimate yet electric atmosphere that has become legendary among fans and players alike.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
@@ -89,7 +89,7 @@ const Arena = () => {
                     "Bag Policy: Only clear bags smaller than 12x6x12 are permitted.",
                     "No outside food or beverages allowed inside the venue.",
                     "Doors open 90 minutes prior to puck drop.",
-                    "Raiders Memorial Arena is a 100% smoke-free facility."
+                    "Alcott Arena is a 100% smoke-free facility."
                   ].map((policy, i) => (
                     <li key={i} className="flex items-start gap-3 text-muted-foreground">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
