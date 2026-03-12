@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Trophy, Users, BarChart3, Image, Handshake, Mail, Menu, X, Calendar, Ticket, Newspaper } from 'lucide-react';
+import { Trophy, Users, BarChart3, Image, Handshake, Mail, Menu, X, Calendar, Ticket, Newspaper, Map, ShoppingBag, ListOrdered } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -15,8 +15,11 @@ const Navbar = () => {
     { name: 'Schedule', path: '/schedule', icon: Calendar },
     { name: 'Roster', path: '/roster', icon: Users },
     { name: 'Stats', path: '/stats', icon: BarChart3 },
+    { name: 'Standings', path: '/standings', icon: ListOrdered },
     { name: 'News', path: '/news', icon: Newspaper },
     { name: 'Gallery', path: '/gallery', icon: Image },
+    { name: 'Arena', path: '/arena', icon: Map },
+    { name: 'Shop', path: '/shop', icon: ShoppingBag },
     { name: 'Sponsors', path: '/sponsors', icon: Handshake },
     { name: 'Contact', path: '/contact', icon: Mail },
   ];
@@ -32,13 +35,13 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden xl:flex items-center space-x-6">
+        <div className="hidden xl:flex items-center space-x-4">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                "text-[13px] font-medium transition-colors hover:text-primary",
                 location.pathname === item.path ? "text-primary" : "text-muted-foreground"
               )}
             >
@@ -46,7 +49,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link to="/tickets">
-            <Button variant="default" size="sm" className="rounded-full px-6">
+            <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs">
               Tickets
             </Button>
           </Link>
@@ -63,7 +66,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="xl:hidden border-t bg-background p-4 space-y-4 animate-in slide-in-from-top-5">
+        <div className="xl:hidden border-t bg-background p-4 space-y-2 animate-in slide-in-from-top-5 max-h-[80vh] overflow-y-auto">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -79,7 +82,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link to="/tickets" onClick={() => setIsOpen(false)}>
-            <Button className="w-full rounded-full">Tickets</Button>
+            <Button className="w-full rounded-full mt-2">Tickets</Button>
           </Link>
         </div>
       )}

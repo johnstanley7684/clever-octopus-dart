@@ -12,6 +12,9 @@ import Contact from "./pages/Contact";
 import Schedule from "./pages/Schedule";
 import Tickets from "./pages/Tickets";
 import News from "./pages/News";
+import Standings from "./pages/Standings";
+import Arena from "./pages/Arena";
+import Shop from "./pages/Shop";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,8 +30,11 @@ const App = () => (
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/roster" element={<Roster />} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/standings" element={<Standings />} />
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/arena" element={<Arena />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tickets" element={<Tickets />} />
