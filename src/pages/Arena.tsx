@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 
 const Arena = () => {
   const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.323456789012!2d-79.91234567890123!3d43.65432109876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6e1234567890%3A0x1234567890abcdef!2s221%20Guelph%20St%2C%20Halton%20Hills%2C%20ON%20L7G%204A8!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -100,10 +101,23 @@ const Arena = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-white/90 font-medium">221 Guelph St.<br />Halton Hills, ON L7G 4A8</p>
-                  <div className="aspect-video bg-black/20 rounded-xl flex items-center justify-center border border-white/10">
-                    <span className="text-white/50 text-sm italic">Interactive Map Placeholder</span>
+                  <div className="aspect-video bg-black/20 rounded-xl overflow-hidden border border-white/10">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.323456789012!2d-79.91234567890123!3d43.65432109876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6e1234567890%3A0x1234567890abcdef!2s221%20Guelph%20St%2C%20Halton%20Hills%2C%20ON%20L7G%204A8!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca"
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen={true} 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
-                  <Button className="w-full bg-black text-white hover:bg-zinc-900 rounded-full font-bold">Get Directions</Button>
+                  <Button 
+                    className="w-full bg-black text-white hover:bg-zinc-900 rounded-full font-bold"
+                    onClick={() => window.open("https://www.google.com/maps/dir/?api=1&destination=221+Guelph+St,+Halton+Hills,+ON+L7G+4A8", "_blank")}
+                  >
+                    Get Directions
+                  </Button>
                 </CardContent>
               </Card>
 
