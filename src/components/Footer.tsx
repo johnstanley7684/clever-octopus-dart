@@ -12,11 +12,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img 
-                src={logoUrl} 
-                alt="Georgetown Raiders Logo" 
-                className="h-12 w-auto object-contain brightness-110"
-              />
+              <div className="bg-white p-1.5 rounded-lg">
+                <img 
+                  src={logoUrl} 
+                  alt="Georgetown Raiders Logo" 
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
               <span className="text-2xl font-bold tracking-tighter text-white">RAIDERS</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
@@ -43,7 +45,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-4">Arena Info</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Raiders Memorial Arena</li>
+              <li>Alcott Arena</li>
               <li>123 Ice Rink Way</li>
               <li>Georgetown, ST 54321</li>
               <li>(555) 123-4567</li>

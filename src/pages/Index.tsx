@@ -31,15 +31,15 @@ const Index = () => {
           
           <div className="container relative z-10 text-white">
             <div className="flex flex-col items-center text-center space-y-8 animate-in fade-in zoom-in duration-1000">
-              {/* Official Logo Overlay */}
+              {/* Official Logo Overlay with Shield Background */}
               <div className="relative group">
                 <div className="absolute -inset-12 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all duration-500" />
                 <div className="relative flex flex-col items-center">
-                  <div className="mb-8 transform group-hover:scale-105 transition-transform duration-500">
+                  <div className="mb-8 transform group-hover:scale-105 transition-transform duration-500 bg-white p-6 rounded-full shadow-[0_0_50px_rgba(255,255,255,0.2)]">
                     <img 
                       src={logoUrl} 
                       alt="Georgetown Raiders Official Logo" 
-                      className="h-48 md:h-64 w-auto drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]"
+                      className="h-40 md:h-56 w-auto"
                     />
                   </div>
                   <div className="space-y-2">

@@ -34,7 +34,7 @@ const Navbar = () => {
           <img 
             src={logoUrl} 
             alt="Georgetown Raiders Logo" 
-            className="h-10 w-auto object-contain"
+            className="h-10 w-auto object-contain mix-blend-multiply"
           />
           <span className="text-xl font-bold tracking-tight hidden sm:inline-block">GEORGETOWN RAIDERS</span>
         </Link>
