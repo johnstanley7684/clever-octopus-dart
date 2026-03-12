@@ -27,7 +27,7 @@ const Gallery = () => {
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-4">Photo Gallery</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Capturing the intensity, the passion, and the moments that define Titans Hockey.
+            Capturing the intensity, the passion, and the moments that define Raiders Hockey.
           </p>
         </div>
 
