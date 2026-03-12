@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, HelpCircle, LayoutDashboard, Image } from 'lucide-react';
+import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, HelpCircle, LayoutDashboard, Image, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import CartDrawer from './CartDrawer';
@@ -14,6 +14,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: Heart },
     { name: 'Schedule', path: '/schedule', icon: Calendar },
+    { name: 'Match Center', path: '/match-center', icon: Zap },
     { name: 'Roster', path: '/roster', icon: Users },
     { name: 'Stats', path: '/stats', icon: BarChart3 },
     { name: 'Standings', path: '/standings', icon: ListOrdered },

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const scores = [
   { home: "RAIDERS", away: "ROYALS", score: "4 - 2", status: "FINAL", date: "SEP 06" },
@@ -21,7 +22,11 @@ const ScoreTicker = () => {
         transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
       >
         {[...scores, ...scores].map((game, i) => (
-          <div key={i} className="inline-flex items-center px-8 border-r border-slate-800 last:border-r-0">
+          <Link 
+            key={i} 
+            to="/match-center" 
+            className="inline-flex items-center px-8 border-r border-slate-800 last:border-r-0 hover:bg-slate-900 transition-colors"
+          >
             <span className="text-[10px] font-bold text-slate-500 mr-3">{game.date}</span>
             <div className="flex items-center gap-4 text-xs font-black">
               <span className={game.home === "RAIDERS" ? "text-blue-400" : ""}>{game.home}</span>
@@ -29,7 +34,7 @@ const ScoreTicker = () => {
               <span className={game.away === "RAIDERS" ? "text-blue-400" : ""}>{game.away}</span>
             </div>
             <span className="ml-3 text-[10px] font-bold text-green-500">{game.status}</span>
-          </div>
+          </Link>
         ))}
       </motion.div>
     </div>

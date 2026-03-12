@@ -21,6 +21,7 @@ import History from "./pages/History";
 import FAQ from "./pages/FAQ";
 import Dashboard from "./pages/Dashboard";
 import Checkout from "./pages/Checkout";
+import MatchCenter from "./pages/MatchCenter";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/schedule" element={<Schedule />} />
+            <Route path="/match-center" element={<MatchCenter />} />
             <Route path="/roster" element={<Roster />} />
             <Route path="/roster/:id" element={<PlayerProfile />} />
             <Route path="/stats" element={<Stats />} />

@@ -6,11 +6,18 @@ import Footer from '@/components/Footer';
 import ScoreTicker from '@/components/ScoreTicker';
 import InstagramFeed from '@/components/InstagramFeed';
 import { Button } from '@/components/ui/button';
-import { Calendar, Trophy, Users, Shield, Smartphone, Apple, PlayCircle } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Calendar, Trophy, Users, Shield, Smartphone, Apple, PlayCircle, Mail, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { showSuccess } from '@/utils/toast';
 
 const Index = () => {
   const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    showSuccess("Thanks for subscribing to the Raid!");
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -75,20 +82,23 @@ const Index = () => {
         </section>
 
         {/* Next Game Section */}
-        <section className="pt-24 pb-12 bg-slate-950 text-white">
+        <section className="pt-32 pb-12 bg-slate-950 text-white">
           <div className="container">
             <div className="bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
               <div className="text-center md:text-left">
-                <p className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-2">Next Home Game</p>
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                  <Badge className="bg-red-600 text-white animate-pulse">LIVE NOW</Badge>
+                  <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">Match Center</p>
+                </div>
                 <h2 className="text-3xl font-bold">Raiders vs. Milton Menace</h2>
                 <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-slate-400">
                   <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>Saturday, Sep 13</span>
+                    <Zap className="h-4 w-4 text-yellow-500" />
+                    <span className="font-bold text-white">4 - 2</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Trophy className="h-4 w-4" />
-                    <span>7:30 PM EST</span>
+                    <Clock className="h-4 w-4" />
+                    <span>3rd Period - 12:45</span>
                   </div>
                 </div>
               </div>
@@ -107,11 +117,42 @@ const Index = () => {
                   <span className="font-bold">MENACE</span>
                 </div>
               </div>
-              <Link to="/tickets">
-                <Button className="rounded-full px-8 bg-white text-black hover:bg-slate-200">
-                  Get Tickets
+              <Link to="/match-center">
+                <Button className="rounded-full px-8 bg-white text-black hover:bg-slate-200 font-bold">
+                  Enter Match Center
                 </Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-24 bg-white">
+          <div className="container">
+            <div className="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 opacity-10">
+                <Mail className="w-96 h-96" />
+              </div>
+              <div className="relative z-10 max-w-2xl">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">STAY IN THE RAID</h2>
+                <p className="text-xl text-blue-100 mb-10 leading-relaxed">
+                  Get exclusive news, ticket alerts, and behind-the-scenes content delivered straight to your inbox.
+                </p>
+                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
+                  <Input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="h-14 rounded-full bg-white/10 border-white/20 text-white placeholder:text-blue-200 px-8 focus-visible:ring-white"
+                    required
+                  />
+                  <Button type="submit" size="lg" className="h-14 rounded-full px-10 bg-white text-blue-600 hover:bg-blue-50 font-bold">
+                    Subscribe Now
+                  </Button>
+                </form>
+                <p className="mt-6 text-sm text-blue-200">
+                  By subscribing, you agree to our Privacy Policy and to receive marketing emails.
+                </p>
+              </div>
             </div>
           </div>
         </section>
