@@ -21,14 +21,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <ScoreTicker />
       <Navbar />
       
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative h-[85vh] flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0 bg-slate-950">
+          <div className="absolute inset-0 z-0 bg-black">
             <img 
               src={logoUrl} 
               alt="Raiders Background" 
@@ -83,9 +83,9 @@ const Index = () => {
         </section>
 
         {/* Next Game Section */}
-        <section className="pt-32 pb-12 bg-slate-950 text-white">
+        <section className="pt-32 pb-12 bg-black text-white">
           <div className="container">
-            <div className="bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
+            <div className="bg-zinc-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-zinc-800">
               <div className="text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
                   <Badge className="bg-red-600 text-white animate-pulse">LIVE NOW</Badge>
@@ -105,14 +105,14 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-8">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
+                  <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-2">
                     <Shield className="h-10 w-10 text-red-600" />
                   </div>
                   <span className="font-bold">RAIDERS</span>
                 </div>
-                <div className="text-4xl font-black text-slate-700 italic">VS</div>
+                <div className="text-4xl font-black text-zinc-700 italic">VS</div>
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
+                  <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-2">
                     <Users className="h-10 w-10 text-slate-400" />
                   </div>
                   <span className="font-bold">MENACE</span>
@@ -128,7 +128,7 @@ const Index = () => {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-black">
           <div className="container">
             <div className="bg-red-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 opacity-10">
@@ -159,7 +159,7 @@ const Index = () => {
         </section>
 
         {/* Mobile App Section */}
-        <section className="py-24 bg-slate-50 overflow-hidden">
+        <section className="py-24 bg-zinc-950 overflow-hidden">
           <div className="container">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 space-y-8">
@@ -167,32 +167,32 @@ const Index = () => {
                   <Smartphone className="h-4 w-4" />
                   <span>Mobile Experience</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900">
+                <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white">
                   THE RAIDERS IN YOUR POCKET
                 </h2>
-                <p className="text-xl text-slate-600 leading-relaxed">
+                <p className="text-xl text-slate-400 leading-relaxed">
                   Access live scores, digital tickets, and exclusive content anywhere. Our web app is optimized for your mobile device—no download required.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="bg-white p-2 rounded-lg shadow-sm">
+                    <div className="bg-zinc-900 p-2 rounded-lg shadow-sm">
                       <Smartphone className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Add to Home Screen</h4>
+                      <h4 className="font-bold text-white">Add to Home Screen</h4>
                       <p className="text-slate-500 text-sm">Open this site in Safari or Chrome and select "Add to Home Screen" for an app-like experience.</p>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button variant="outline" className="rounded-xl h-14 px-6 gap-3 border-slate-200 hover:bg-slate-100">
+                  <Button variant="outline" className="rounded-xl h-14 px-6 gap-3 border-zinc-800 hover:bg-zinc-900 text-white">
                     <Apple className="h-6 w-6" />
                     <div className="text-left">
                       <p className="text-[10px] uppercase font-bold leading-none">Coming soon to</p>
                       <p className="text-sm font-bold">App Store</p>
                     </div>
                   </Button>
-                  <Button variant="outline" className="rounded-xl h-14 px-6 gap-3 border-slate-200 hover:bg-slate-100">
+                  <Button variant="outline" className="rounded-xl h-14 px-6 gap-3 border-zinc-800 hover:bg-zinc-900 text-white">
                     <PlayCircle className="h-6 w-6" />
                     <div className="text-left">
                       <p className="text-[10px] uppercase font-bold leading-none">Coming soon to</p>
@@ -206,7 +206,7 @@ const Index = () => {
                 <img 
                   src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" 
                   alt="Mobile App Mockup" 
-                  className="relative rounded-[3rem] shadow-2xl border-[8px] border-slate-900 w-full max-w-[320px] mx-auto"
+                  className="relative rounded-[3rem] shadow-2xl border-[8px] border-zinc-900 w-full max-w-[320px] mx-auto"
                 />
               </div>
             </div>
