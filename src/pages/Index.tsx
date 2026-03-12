@@ -21,7 +21,7 @@ const Index = () => {
         <section className="relative h-[80vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://drive.google.com/uc?export=download&id=1Ze0o3qbLdKdWAWPY5EDVD-SzYgDIEX8k" 
+              src="https://lh3.googleusercontent.com/d/1Ze0o3qbLdKdWAWPY5EDVD-SzYgDIEX8k" 
               alt="Raiders Hero" 
               className="w-full h-full object-cover brightness-[0.4]"
             />
