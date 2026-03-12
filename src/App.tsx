@@ -9,6 +9,9 @@ import Stats from "./pages/Stats";
 import Gallery from "./pages/Gallery";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
+import Schedule from "./pages/Schedule";
+import Tickets from "./pages/Tickets";
+import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,11 +24,14 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/schedule" element={<Schedule />} />
           <Route path="/roster" element={<Roster />} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/tickets" element={<Tickets />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

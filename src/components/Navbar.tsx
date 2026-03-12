@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Trophy, Users, BarChart3, Image, Handshake, Mail, Menu, X } from 'lucide-react';
+import { Trophy, Users, BarChart3, Image, Handshake, Mail, Menu, X, Calendar, Ticket, Newspaper } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -12,8 +12,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/', icon: Trophy },
+    { name: 'Schedule', path: '/schedule', icon: Calendar },
     { name: 'Roster', path: '/roster', icon: Users },
     { name: 'Stats', path: '/stats', icon: BarChart3 },
+    { name: 'News', path: '/news', icon: Newspaper },
     { name: 'Gallery', path: '/gallery', icon: Image },
     { name: 'Sponsors', path: '/sponsors', icon: Handshake },
     { name: 'Contact', path: '/contact', icon: Mail },
@@ -30,7 +32,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden xl:flex items-center space-x-6">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -43,14 +45,16 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <Button variant="default" size="sm" className="rounded-full px-6">
-            Tickets
-          </Button>
+          <Link to="/tickets">
+            <Button variant="default" size="sm" className="rounded-full px-6">
+              Tickets
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Navigation Toggle */}
         <button
-          className="md:hidden p-2"
+          className="xl:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}
@@ -59,7 +63,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-t bg-background p-4 space-y-4 animate-in slide-in-from-top-5">
+        <div className="xl:hidden border-t bg-background p-4 space-y-4 animate-in slide-in-from-top-5">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -74,7 +78,9 @@ const Navbar = () => {
               <span>{item.name}</span>
             </Link>
           ))}
-          <Button className="w-full rounded-full">Tickets</Button>
+          <Link to="/tickets" onClick={() => setIsOpen(false)}>
+            <Button className="w-full rounded-full">Tickets</Button>
+          </Link>
         </div>
       )}
     </nav>
