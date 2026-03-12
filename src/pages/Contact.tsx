@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { showSuccess } from '@/utils/toast';
+import { siteConfig } from '@/config/site';
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow container py-12">
@@ -31,7 +32,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <Card className="border-none shadow-lg">
+            <Card className="border-none shadow-lg bg-zinc-900">
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
               </CardHeader>
@@ -40,22 +41,22 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" placeholder="John Doe" required />
+                      <Input id="name" placeholder="John Doe" className="bg-zinc-800 border-zinc-700" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" placeholder="john@example.com" required />
+                      <Input id="email" type="email" placeholder="john@example.com" className="bg-zinc-800 border-zinc-700" required />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="How can we help?" required />
+                    <Input id="subject" placeholder="How can we help?" className="bg-zinc-800 border-zinc-700" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Tell us more..." className="min-h-[150px]" required />
+                    <Textarea id="message" placeholder="Tell us more..." className="min-h-[150px] bg-zinc-800 border-zinc-700" required />
                   </div>
-                  <Button type="submit" className="w-full md:w-auto px-12 rounded-full">
+                  <Button type="submit" className="w-full md:w-auto px-12 rounded-full bg-red-600 hover:bg-red-700">
                     Send Message
                   </Button>
                 </form>
@@ -64,51 +65,51 @@ const Contact = () => {
           </div>
 
           <div className="space-y-6">
-            <Card className="border-none shadow-md bg-primary text-primary-foreground">
+            <Card className="border-none shadow-md bg-red-600 text-white">
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 mt-1 text-blue-300" />
+                  <MapPin className="h-5 w-5 mt-1 text-red-200" />
                   <div>
-                    <p className="font-bold">Alcott Arena</p>
-                    <p className="text-sm text-primary-foreground/70">221 Guelph St., Halton Hills, ON L7G 4A8</p>
+                    <p className="font-bold">{siteConfig.name} Arena</p>
+                    <p className="text-sm text-red-100">{siteConfig.contact.address}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 mt-1 text-blue-300" />
+                  <Phone className="h-5 w-5 mt-1 text-red-200" />
                   <div>
                     <p className="font-bold">Phone</p>
-                    <p className="text-sm text-primary-foreground/70">(905) 877-8488</p>
+                    <p className="text-sm text-red-100">{siteConfig.contact.phone}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail className="h-5 w-5 mt-1 text-blue-300" />
+                  <Mail className="h-5 w-5 mt-1 text-red-200" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p className="text-sm text-primary-foreground/70">info@georgetownraiders.com</p>
+                    <p className="text-sm text-red-100">{siteConfig.contact.email}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-md">
+            <Card className="border-none shadow-md bg-zinc-900">
               <CardHeader>
                 <CardTitle>Office Hours</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Mon - Fri</span>
-                  <span className="font-medium">9:00 AM - 5:00 PM</span>
+                  <span className="font-medium">{siteConfig.contact.officeHours.monFri}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Saturday</span>
-                  <span className="font-medium">10:00 AM - 2:00 PM</span>
+                  <span className="font-medium">{siteConfig.contact.officeHours.sat}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Sunday</span>
-                  <span className="font-medium text-red-500">Closed</span>
+                  <span className="font-medium text-red-500">{siteConfig.contact.officeHours.sun}</span>
                 </div>
               </CardContent>
             </Card>
