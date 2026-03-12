@@ -6,38 +6,29 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check, Ticket, Star, Users, ShieldCheck, Trophy } from 'lucide-react';
+import { Check, Ticket, Star, Users, Trophy } from 'lucide-react';
 import { showSuccess } from '@/utils/toast';
 import { cn } from '@/lib/utils';
 
 const ticketTypes = [
   {
     name: "Single Game",
-    price: "$45",
+    price: "$15",
     description: "Perfect for a night out with friends or family.",
     icon: Ticket,
-    features: ["Standard Seating", "Digital Ticket", "Arena Access", "Concession Discounts"],
+    features: ["Standard Seating", "Digital Ticket", "Arena Access"],
     color: "bg-slate-100",
     buttonText: "Select Game"
   },
   {
     name: "Season Pass",
-    price: "$799",
-    description: "The ultimate commitment for the true Titans fan.",
+    price: "$400",
+    description: "The ultimate commitment to the Raiders Fan.",
     icon: Star,
-    features: ["All Home Games", "Reserved Seating", "Exclusive Merch", "Playoff Priority", "VIP Entrance"],
+    features: ["All Home Games"],
     color: "bg-blue-50 border-blue-200",
     popular: true,
     buttonText: "Buy Season Pass"
-  },
-  {
-    name: "VIP Box",
-    price: "$2,500",
-    description: "Premium experience for corporate events or groups.",
-    icon: ShieldCheck,
-    features: ["Private Suite", "Catering Included", "Parking Passes", "Player Meet & Greet", "Dedicated Server"],
-    color: "bg-slate-900 text-white",
-    buttonText: "Inquire Now"
   }
 ];
 
@@ -54,11 +45,11 @@ const Tickets = () => {
         <div className="mb-16 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-4">Tickets & Memberships</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose your experience and join the roar at Titan Memorial Arena.
+            Choose your experience and join the roar at Alcott Arena.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 max-w-4xl mx-auto">
           {ticketTypes.map((ticket) => (
             <Card key={ticket.name} className={cn("relative flex flex-col border-none shadow-lg overflow-hidden", ticket.color)}>
               {ticket.popular && (
@@ -71,14 +62,14 @@ const Tickets = () => {
                   <ticket.icon className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-2xl">{ticket.name}</CardTitle>
-                <CardDescription className={ticket.name === "VIP Box" ? "text-slate-400" : ""}>
+                <CardDescription>
                   {ticket.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow space-y-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-black">{ticket.price}</span>
-                  <span className="text-sm opacity-70">{ticket.name === "Single Game" ? "/ticket" : ticket.name === "VIP Box" ? "/game" : "/season"}</span>
+                  <span className="text-sm opacity-70">{ticket.name === "Single Game" ? "/ticket" : "/season"}</span>
                 </div>
                 <ul className="space-y-3">
                   {ticket.features.map((feature) => (
@@ -92,10 +83,7 @@ const Tickets = () => {
               <CardFooter>
                 <Button 
                   onClick={() => handlePurchase(ticket.name)}
-                  className={cn(
-                    "w-full rounded-full font-bold",
-                    ticket.name === "VIP Box" ? "bg-white text-black hover:bg-slate-200" : "bg-blue-600 hover:bg-blue-700"
-                  )}
+                  className="w-full rounded-full font-bold bg-blue-600 hover:bg-blue-700"
                 >
                   {ticket.buttonText}
                 </Button>
