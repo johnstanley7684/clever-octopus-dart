@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -18,7 +19,8 @@ const ticketTypes = [
     icon: Ticket,
     features: ["Standard Seating", "Digital Ticket", "Arena Access"],
     color: "bg-slate-100",
-    buttonText: "Select Game"
+    buttonText: "Select Game",
+    path: "/schedule"
   },
   {
     name: "Season Pass",
@@ -33,8 +35,14 @@ const ticketTypes = [
 ];
 
 const Tickets = () => {
-  const handlePurchase = (type: string) => {
-    showSuccess(`Redirecting to secure checkout for ${type}...`);
+  const navigate = useNavigate();
+
+  const handleAction = (ticket: typeof ticketTypes[0]) => {
+    if (ticket.path) {
+      navigate(ticket.path);
+    } else {
+      showSuccess(`Redirecting to secure checkout for ${ticket.name}...`);
+    }
   };
 
   return (
@@ -82,7 +90,7 @@ const Tickets = () => {
               </CardContent>
               <CardFooter>
                 <Button 
-                  onClick={() => handlePurchase(ticket.name)}
+                  onClick={() => handleAction(ticket)}
                   className="w-full rounded-full font-bold bg-blue-600 hover:bg-blue-700"
                 >
                   {ticket.buttonText}
