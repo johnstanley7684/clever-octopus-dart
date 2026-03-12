@@ -110,7 +110,7 @@ const Arena = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-slate-300">123 Ice Rink Way<br />Georgetown, ST 54321</p>
+                  <p className="text-slate-300">221 Guelph St.<br />Halton Hills, ON L7G 4A8</p>
                   <div className="aspect-video bg-slate-800 rounded-lg flex items-center justify-center">
                     <span className="text-slate-500 text-sm italic">Interactive Map Placeholder</span>
                   </div>

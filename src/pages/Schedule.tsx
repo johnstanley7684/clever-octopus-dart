@@ -10,14 +10,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 
 const games = [
-  { id: 1, opponent: "Milton Menace", date: "Oct 19, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
-  { id: 2, opponent: "Oakville Blades", date: "Oct 23, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
-  { id: 3, opponent: "Collingwood Blues", date: "Oct 26, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
-  { id: 4, opponent: "Milton Menace", date: "Oct 30, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
-  { id: 5, opponent: "Buffalo Jr. Sabres", date: "Nov 2, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
-  { id: 6, opponent: "King City", date: "Oct 9, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "W 4-1" },
-  { id: 7, opponent: "Milton Menace", date: "Oct 5, 2024", time: "7:30 PM", venue: "Milton Memorial Arena", type: "Away", status: "Completed", result: "L 2-3" },
-  { id: 8, opponent: "Burlington Cougars", date: "Oct 2, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "W 5-2" },
+  { id: 1, opponent: "Milton Menace", date: "Sep 13, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 2, opponent: "Oakville Blades", date: "Sep 20, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 3, opponent: "Burlington Cougars", date: "Sep 27, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 4, opponent: "Collingwood Blues", date: "Oct 4, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 5, opponent: "Buffalo Jr. Sabres", date: "Oct 11, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 6, opponent: "King City Royals", date: "Sep 6, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Completed", result: "W 4-2" },
+  { id: 7, opponent: "North York Rangers", date: "Aug 30, 2025", time: "7:30 PM", venue: "Vic Johnston CC", type: "Away", status: "Completed", result: "W 3-1" },
+  { id: 8, opponent: "Toronto Jr. Canadiens", date: "Aug 23, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "L 2-4" },
 ];
 
 const Schedule = () => {
@@ -32,7 +32,7 @@ const Schedule = () => {
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-4">Season Schedule</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            OJHL 2024-25 Regular Season. Join us at Alcott Arena for the Raid!
+            OJHL 2025-26 Regular Season. Join us at Alcott Arena for the Raid!
           </p>
         </div>
 

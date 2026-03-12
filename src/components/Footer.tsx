@@ -38,7 +38,7 @@ const Footer = () => {
               <li><a href="/roster" className="hover:text-white transition-colors">Team Roster</a></li>
               <li><a href="/stats" className="hover:text-white transition-colors">Game Stats</a></li>
               <li><a href="/gallery" className="hover:text-white transition-colors">Photo Gallery</a></li>
-              <li><a href="/sponsors" className="hover:text-white transition-colors">Our Partners</a></li>
+              <li><a href="/sponsors" className="hover:text-white transition-colors">Our Sponsors</a></li>
             </ul>
           </div>
 
@@ -46,9 +46,9 @@ const Footer = () => {
             <h4 className="font-bold text-white mb-4">Arena Info</h4>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>Alcott Arena</li>
-              <li>123 Ice Rink Way</li>
-              <li>Georgetown, ST 54321</li>
-              <li>(555) 123-4567</li>
+              <li>221 Guelph St.</li>
+              <li>Halton Hills, ON L7G 4A8</li>
+              <li>(905) 877-8488</li>
             </ul>
           </div>
 

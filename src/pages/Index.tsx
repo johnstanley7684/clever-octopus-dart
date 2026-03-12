@@ -56,7 +56,7 @@ const Index = () => {
               </div>
 
               <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-medium">
-                The Legacy continues, Join us in the Raid at Alcott Arena for the 2026/27 season!
+                The Legacy continues, Join us in the Raid at Alcott Arena for the 2025/26 season!
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -85,7 +85,7 @@ const Index = () => {
                 <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-slate-400">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
-                    <span>Saturday, Oct 19</span>
+                    <span>Saturday, Sep 13</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Trophy className="h-4 w-4" />

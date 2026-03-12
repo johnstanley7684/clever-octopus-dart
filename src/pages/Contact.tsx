@@ -72,22 +72,22 @@ const Contact = () => {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-5 w-5 mt-1 text-blue-300" />
                   <div>
-                    <p className="font-bold">Raiders Memorial Arena</p>
-                    <p className="text-sm text-primary-foreground/70">123 Ice Rink Way, Georgetown, ST 54321</p>
+                    <p className="font-bold">Alcott Arena</p>
+                    <p className="text-sm text-primary-foreground/70">221 Guelph St., Halton Hills, ON L7G 4A8</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Phone className="h-5 w-5 mt-1 text-blue-300" />
                   <div>
                     <p className="font-bold">Phone</p>
-                    <p className="text-sm text-primary-foreground/70">(555) 123-4567</p>
+                    <p className="text-sm text-primary-foreground/70">(905) 877-8488</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="h-5 w-5 mt-1 text-blue-300" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p className="text-sm text-primary-foreground/70">info@raidershockey.com</p>
+                    <p className="text-sm text-primary-foreground/70">info@georgetownraiders.com</p>
                   </div>
                 </div>
               </CardContent>
