@@ -9,13 +9,13 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
 const standings = [
-  { rank: 1, team: "Titans", gp: 50, w: 35, l: 12, otl: 3, pts: 73, gf: 164, ga: 112, diff: "+52", streak: "W4" },
-  { rank: 2, team: "Wolves", gp: 50, w: 32, l: 15, otl: 3, pts: 67, gf: 158, ga: 130, diff: "+28", streak: "L1" },
-  { rank: 3, team: "Kings", gp: 49, w: 28, l: 18, otl: 3, pts: 59, gf: 142, ga: 138, diff: "+4", streak: "W2" },
-  { rank: 4, team: "Blizzards", gp: 50, w: 25, l: 20, otl: 5, pts: 55, gf: 135, ga: 142, diff: "-7", streak: "L2" },
-  { rank: 5, team: "Ravens", gp: 50, w: 22, l: 24, otl: 4, pts: 48, gf: 128, ga: 145, diff: "-17", streak: "W1" },
-  { rank: 6, team: "Bears", gp: 50, w: 18, l: 28, otl: 4, pts: 40, gf: 115, ga: 158, diff: "-43", streak: "L3" },
-  { rank: 7, team: "Sharks", gp: 49, w: 15, l: 30, otl: 4, pts: 34, gf: 108, ga: 165, diff: "-57", streak: "L1" },
+  { rank: 1, team: "Georgetown Raiders", gp: 54, w: 38, l: 12, otl: 2, sol: 2, pts: 80, gf: 212, ga: 145, diff: "+67", streak: "W5" },
+  { rank: 2, team: "Collingwood Blues", gp: 54, w: 36, l: 14, otl: 3, sol: 1, pts: 76, gf: 198, ga: 132, diff: "+66", streak: "W2" },
+  { rank: 3, team: "Milton Menace", gp: 54, w: 33, l: 16, otl: 4, sol: 1, pts: 71, gf: 185, ga: 154, diff: "+31", streak: "L1" },
+  { rank: 4, team: "Burlington Cougars", gp: 54, w: 30, l: 19, otl: 3, sol: 2, pts: 65, gf: 174, ga: 162, diff: "+12", streak: "W1" },
+  { rank: 5, team: "Oakville Blades", gp: 54, w: 27, l: 22, otl: 4, sol: 1, pts: 59, gf: 168, ga: 175, diff: "-7", streak: "L2" },
+  { rank: 6, team: "Buffalo Jr. Sabres", gp: 54, w: 22, l: 28, otl: 3, sol: 1, pts: 48, gf: 152, ga: 188, diff: "-36", streak: "W1" },
+  { rank: 7, team: "King City Royals", gp: 54, w: 15, l: 34, otl: 3, sol: 2, pts: 35, gf: 134, ga: 210, diff: "-76", streak: "L4" },
 ];
 
 const Standings = () => {
@@ -25,17 +25,17 @@ const Standings = () => {
       
       <main className="flex-grow container py-12">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4">League Standings</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4">OJHL League Standings</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            The race for the championship. Titans are currently leading the Northern Division.
+            The 2025/26 Regular Season race. The Raiders are currently leading the West Division.
           </p>
         </div>
 
         <Card className="border-none shadow-lg overflow-hidden">
           <CardHeader className="bg-slate-900 text-white">
             <CardTitle className="flex items-center justify-between">
-              <span>Northern Division</span>
-              <Badge variant="secondary" className="bg-blue-600 text-white border-none">Season 2024/25</Badge>
+              <span>West Division</span>
+              <Badge variant="secondary" className="bg-blue-600 text-white border-none">Season 2025/26</Badge>
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
@@ -57,7 +57,7 @@ const Standings = () => {
               </TableHeader>
               <TableBody>
                 {standings.map((row) => (
-                  <TableRow key={row.team} className={row.team === "Titans" ? "bg-blue-50/50 font-medium" : ""}>
+                  <TableRow key={row.team} className={row.team === "Georgetown Raiders" ? "bg-blue-50/50 font-medium" : ""}>
                     <TableCell className="text-center font-bold">{row.rank}</TableCell>
                     <TableCell className="flex items-center gap-3">
                       <div className={cn(
@@ -65,7 +65,7 @@ const Standings = () => {
                         row.rank <= 4 ? "bg-green-500" : "bg-slate-300"
                       )} />
                       {row.team}
-                      {row.team === "Titans" && <Badge variant="outline" className="ml-2 text-[10px] uppercase py-0">CLINCHED</Badge>}
+                      {row.team === "Georgetown Raiders" && <Badge variant="outline" className="ml-2 text-[10px] uppercase py-0">CLINCHED</Badge>}
                     </TableCell>
                     <TableCell className="text-center">{row.gp}</TableCell>
                     <TableCell className="text-center">{row.w}</TableCell>
