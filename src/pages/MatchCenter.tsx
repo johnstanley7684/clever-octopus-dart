@@ -10,12 +10,12 @@ import { Trophy, Clock, Zap, Shield } from 'lucide-react';
 
 const MatchCenter = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow">
         {/* Live Score Header */}
-        <div className="bg-slate-950 text-white py-12 border-b border-slate-800">
+        <div className="bg-zinc-950 text-white py-12 border-b border-zinc-800">
           <div className="container">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
@@ -29,10 +29,10 @@ const MatchCenter = () => {
               </div>
 
               <div className="flex flex-col items-center gap-4">
-                <Badge className="bg-red-600 text-white animate-pulse px-4 py-1">LIVE - 3RD PERIOD</Badge>
+                <Badge className="bg-red-600 text-white animate-pulse px-4 py-1 border-none">LIVE - 3RD PERIOD</Badge>
                 <div className="flex items-center gap-8">
                   <span className="text-7xl md:text-9xl font-black italic">4</span>
-                  <span className="text-4xl font-black text-slate-700 italic">VS</span>
+                  <span className="text-4xl font-black text-zinc-800 italic">VS</span>
                   <span className="text-7xl md:text-9xl font-black italic">2</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-400 font-mono">
@@ -42,11 +42,11 @@ const MatchCenter = () => {
               </div>
 
               <div className="flex flex-col items-center text-center md:items-end md:text-right gap-4">
-                <div className="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center p-6 shadow-xl">
+                <div className="w-24 h-24 bg-zinc-800 rounded-full flex items-center justify-center p-6 shadow-xl">
                   <Shield className="h-full w-full text-slate-400" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black tracking-tighter">MILTON MENACE</h2>
+                  <h2 className="text-2xl font-black tracking-tighter text-white">MILTON MENACE</h2>
                   <p className="text-slate-400 font-bold">AWAY</p>
                 </div>
               </div>
@@ -59,16 +59,16 @@ const MatchCenter = () => {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
               <Tabs defaultValue="summary" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 rounded-xl h-12 bg-slate-100">
-                  <TabsTrigger value="summary" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Game Summary</TabsTrigger>
-                  <TabsTrigger value="stats" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Team Stats</TabsTrigger>
-                  <TabsTrigger value="lineups" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Lineups</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-3 rounded-xl h-12 bg-zinc-900">
+                  <TabsTrigger value="summary" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">Game Summary</TabsTrigger>
+                  <TabsTrigger value="stats" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">Team Stats</TabsTrigger>
+                  <TabsTrigger value="lineups" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">Lineups</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="summary" className="mt-6 space-y-6">
-                  <Card className="border-none shadow-sm">
+                  <Card className="border-none shadow-sm bg-zinc-900">
                     <CardHeader>
-                      <CardTitle className="text-lg flex items-center gap-2">
+                      <CardTitle className="text-lg flex items-center gap-2 text-white">
                         <Zap className="h-5 w-5 text-red-600" />
                         Scoring Summary
                       </CardTitle>
@@ -82,18 +82,18 @@ const MatchCenter = () => {
                         { period: "3rd", time: "05:12", team: "MENACE", player: "T. Brown (5)", assist: "M. Wilson", score: "3-2" },
                         { period: "3rd", time: "07:45", team: "RAIDERS", player: "B. Lauwaert (13)", assist: "A. Rak", score: "4-2" },
                       ].map((goal, i) => (
-                        <div key={i} className="flex items-center justify-between py-3 border-b last:border-0">
+                        <div key={i} className="flex items-center justify-between py-3 border-b border-zinc-800 last:border-0">
                           <div className="flex items-center gap-4">
-                            <span className="text-xs font-bold text-muted-foreground w-8">{goal.period}</span>
-                            <span className="text-xs font-mono bg-slate-100 px-2 py-0.5 rounded">{goal.time}</span>
+                            <span className="text-xs font-bold text-slate-500 w-8">{goal.period}</span>
+                            <span className="text-xs font-mono bg-black px-2 py-0.5 rounded text-slate-300">{goal.time}</span>
                             <div>
-                              <p className="text-sm font-bold">{goal.player}</p>
-                              <p className="text-[10px] text-muted-foreground">AST: {goal.assist}</p>
+                              <p className="text-sm font-bold text-white">{goal.player}</p>
+                              <p className="text-[10px] text-slate-500">AST: {goal.assist}</p>
                             </div>
                           </div>
                           <div className="text-right">
-                            <Badge variant="outline" className={goal.team === "RAIDERS" ? "text-red-600 border-red-200" : "text-slate-400"}>{goal.team}</Badge>
-                            <p className="text-sm font-black">{goal.score}</p>
+                            <Badge variant="outline" className={goal.team === "RAIDERS" ? "text-red-600 border-red-900/50 bg-red-900/10" : "text-slate-400 border-zinc-800"}>{goal.team}</Badge>
+                            <p className="text-sm font-black text-white">{goal.score}</p>
                           </div>
                         </div>
                       ))}
@@ -102,9 +102,9 @@ const MatchCenter = () => {
                 </TabsContent>
 
                 <TabsContent value="stats" className="mt-6">
-                  <Card className="border-none shadow-sm">
+                  <Card className="border-none shadow-sm bg-zinc-900">
                     <CardHeader>
-                      <CardTitle className="text-lg">Team Comparison</CardTitle>
+                      <CardTitle className="text-lg text-white">Team Comparison</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-8">
                       {[
@@ -117,16 +117,16 @@ const MatchCenter = () => {
                         <div key={i} className="space-y-2">
                           <div className="flex justify-between text-sm font-bold">
                             <span className="text-red-600">{stat.home}</span>
-                            <span className="text-muted-foreground uppercase tracking-widest text-[10px]">{stat.label}</span>
-                            <span>{stat.away}</span>
+                            <span className="text-slate-500 uppercase tracking-widest text-[10px]">{stat.label}</span>
+                            <span className="text-white">{stat.away}</span>
                           </div>
-                          <div className="flex h-2 w-full rounded-full overflow-hidden bg-slate-100">
+                          <div className="flex h-2 w-full rounded-full overflow-hidden bg-black">
                             <div 
                               className="bg-red-600 h-full" 
                               style={{ width: typeof stat.home === 'number' ? `${(stat.home / (stat.home + (stat.away as number))) * 100}%` : '50%' }} 
                             />
                             <div 
-                              className="bg-slate-400 h-full" 
+                              className="bg-zinc-700 h-full" 
                               style={{ width: typeof stat.away === 'number' ? `${(stat.away / ((stat.home as number) + stat.away)) * 100}%` : '50%' }} 
                             />
                           </div>
@@ -138,34 +138,34 @@ const MatchCenter = () => {
 
                 <TabsContent value="lineups" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="border-none shadow-sm">
+                    <Card className="border-none shadow-sm bg-zinc-900">
                       <CardHeader>
                         <CardTitle className="text-sm font-bold text-red-600">RAIDERS LINEUP</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-2">
-                        <p className="text-xs font-bold text-muted-foreground border-b pb-1">FORWARDS</p>
-                        <p className="text-sm">Lauwaert - Beitz - Albanese</p>
-                        <p className="text-sm">Meli - Bell - Kirkland</p>
-                        <p className="text-xs font-bold text-muted-foreground border-b pb-1 pt-4">DEFENCE</p>
-                        <p className="text-sm">Rak - Ilkay</p>
-                        <p className="text-sm">Yin - Agius</p>
-                        <p className="text-xs font-bold text-muted-foreground border-b pb-1 pt-4">GOALIE</p>
-                        <p className="text-sm">Quinn</p>
+                        <p className="text-xs font-bold text-slate-500 border-b border-zinc-800 pb-1">FORWARDS</p>
+                        <p className="text-sm text-white">Lauwaert - Beitz - Albanese</p>
+                        <p className="text-sm text-white">Meli - Bell - Kirkland</p>
+                        <p className="text-xs font-bold text-slate-500 border-b border-zinc-800 pb-1 pt-4">DEFENCE</p>
+                        <p className="text-sm text-white">Rak - Ilkay</p>
+                        <p className="text-sm text-white">Yin - Agius</p>
+                        <p className="text-xs font-bold text-slate-500 border-b border-zinc-800 pb-1 pt-4">GOALIE</p>
+                        <p className="text-sm text-white">Quinn</p>
                       </CardContent>
                     </Card>
-                    <Card className="border-none shadow-sm">
+                    <Card className="border-none shadow-sm bg-zinc-900">
                       <CardHeader>
-                        <CardTitle className="text-sm font-bold text-slate-600">MENACE LINEUP</CardTitle>
+                        <CardTitle className="text-sm font-bold text-slate-400">MENACE LINEUP</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-2">
-                        <p className="text-xs font-bold text-muted-foreground border-b pb-1">FORWARDS</p>
-                        <p className="text-sm">Smith - Brown - Wilson</p>
-                        <p className="text-sm">Davis - Miller - Johnson</p>
-                        <p className="text-xs font-bold text-muted-foreground border-b pb-1 pt-4">DEFENCE</p>
-                        <p className="text-sm">White - Taylor</p>
-                        <p className="text-sm">Anderson - Moore</p>
-                        <p className="text-xs font-bold text-muted-foreground border-b pb-1 pt-4">GOALIE</p>
-                        <p className="text-sm">Stevens</p>
+                        <p className="text-xs font-bold text-slate-500 border-b border-zinc-800 pb-1">FORWARDS</p>
+                        <p className="text-sm text-white">Smith - Brown - Wilson</p>
+                        <p className="text-sm text-white">Davis - Miller - Johnson</p>
+                        <p className="text-xs font-bold text-slate-500 border-b border-zinc-800 pb-1 pt-4">DEFENCE</p>
+                        <p className="text-sm text-white">White - Taylor</p>
+                        <p className="text-sm text-white">Anderson - Moore</p>
+                        <p className="text-xs font-bold text-slate-500 border-b border-zinc-800 pb-1 pt-4">GOALIE</p>
+                        <p className="text-sm text-white">Stevens</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -193,22 +193,22 @@ const MatchCenter = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-none shadow-md">
+              <Card className="border-none shadow-md bg-zinc-900">
                 <CardHeader>
-                  <CardTitle className="text-lg">Game Info</CardTitle>
+                  <CardTitle className="text-lg text-white">Game Info</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Venue</span>
-                    <span className="font-bold">Alcott Arena</span>
+                  <div className="flex justify-between text-sm border-b border-zinc-800 pb-2">
+                    <span className="text-slate-500">Venue</span>
+                    <span className="font-bold text-white">Alcott Arena</span>
+                  </div>
+                  <div className="flex justify-between text-sm border-b border-zinc-800 pb-2">
+                    <span className="text-slate-500">Attendance</span>
+                    <span className="font-bold text-white">1,042</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Attendance</span>
-                    <span className="font-bold">1,042</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Officials</span>
-                    <span className="font-bold">R. Smith, J. Doe</span>
+                    <span className="text-slate-500">Officials</span>
+                    <span className="font-bold text-white">R. Smith, J. Doe</span>
                   </div>
                 </CardContent>
               </Card>
