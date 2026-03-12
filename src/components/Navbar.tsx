@@ -25,7 +25,7 @@ const Navbar = () => {
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
   ];
 
-  const logoUrl = "https://drive.google.com/uc?export=view&id=1RbZlUTabJ8Gd-Sf3ennN1FnOr8fhxcA7";
+  const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

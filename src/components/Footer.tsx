@@ -4,7 +4,7 @@ import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
-  const logoUrl = "https://drive.google.com/uc?export=view&id=1RbZlUTabJ8Gd-Sf3ennN1FnOr8fhxcA7";
+  const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
 
   return (
     <footer className="bg-slate-950 text-slate-200 border-t border-slate-800">

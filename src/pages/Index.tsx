@@ -11,7 +11,7 @@ import { Calendar, Trophy, Users, ArrowRight, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
-  const logoUrl = "https://drive.google.com/uc?export=view&id=1RbZlUTabJ8Gd-Sf3ennN1FnOr8fhxcA7";
+  const logoUrl = "https://www.georgetownraiders.com/pics/georgetown logo.png";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -21,11 +21,11 @@ const Index = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative h-[85vh] flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-slate-950">
             <img 
-              src="https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=1920" 
-              alt="Raiders Arena Background" 
-              className="w-full h-full object-cover brightness-[0.3]"
+              src={logoUrl} 
+              alt="Raiders Background" 
+              className="w-full h-full object-contain opacity-20 scale-150 blur-sm"
             />
           </div>
           
