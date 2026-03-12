@@ -11,10 +11,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Trophy className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold tracking-tighter text-white">TITANS</span>
+              <span className="text-2xl font-bold tracking-tighter text-white">RAIDERS</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              The official home of the Titans Hockey Club. Dedicated to excellence on and off the ice since 1995.
+              The official home of the Georgetown Raiders Hockey Club. Dedicated to excellence on and off the ice since 1995.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 cursor-pointer hover:text-blue-400 transition-colors" />
@@ -37,9 +37,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-4">Arena Info</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Titan Memorial Arena</li>
+              <li>Raiders Memorial Arena</li>
               <li>123 Ice Rink Way</li>
-              <li>North City, ST 54321</li>
+              <li>Georgetown, ST 54321</li>
               <li>(555) 123-4567</li>
             </ul>
           </div>
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Titans Hockey Club. All rights reserved.
+          © {new Date().getFullYear()} Georgetown Raiders Hockey Club. All rights reserved.
         </div>
       </div>
     </footer>

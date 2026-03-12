@@ -32,10 +32,10 @@ const Index = () => {
                 Season 2024/25
               </Badge>
               <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
-                UNLEASH THE <span className="text-blue-500">TITANS</span>
+                UNLEASH THE <span className="text-blue-500">RAIDERS</span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 max-w-xl leading-relaxed">
-                Experience the speed, the power, and the glory. Join us at the Titan Memorial Arena for an unforgettable season.
+                Experience the speed, the power, and the glory. Join us at the Raiders Memorial Arena for an unforgettable season.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link to="/tickets">
@@ -59,7 +59,7 @@ const Index = () => {
             <div className="bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
               <div className="text-center md:text-left">
                 <p className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-2">Next Home Game</p>
-                <h2 className="text-3xl font-bold">Titans vs. Wolves</h2>
+                <h2 className="text-3xl font-bold">Raiders vs. Wolves</h2>
                 <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-slate-400">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
@@ -76,7 +76,7 @@ const Index = () => {
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
                     <Trophy className="h-10 w-10 text-blue-500" />
                   </div>
-                  <span className="font-bold">TITANS</span>
+                  <span className="font-bold">RAIDERS</span>
                 </div>
                 <div className="text-4xl font-black text-slate-700 italic">VS</div>
                 <div className="text-center">
@@ -101,7 +101,7 @@ const Index = () => {
             <div className="flex justify-between items-end mb-12">
               <div>
                 <h2 className="text-4xl font-bold tracking-tight">Latest News</h2>
-                <p className="text-muted-foreground mt-2">Stay updated with everything Titans.</p>
+                <p className="text-muted-foreground mt-2">Stay updated with everything Raiders.</p>
               </div>
               <Link to="/news">
                 <Button variant="ghost" className="group">
@@ -112,7 +112,7 @@ const Index = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: "Titans Clinch Playoff Spot", date: "Oct 5, 2024", image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80&w=600" },
+                { title: "Raiders Clinch Playoff Spot", date: "Oct 5, 2024", image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80&w=600" },
                 { title: "New Training Facility Opens", date: "Oct 2, 2024", image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=600" },
                 { title: "Community Outreach Program", date: "Sep 28, 2024", image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=600" },
               ].map((news, i) => (

@@ -72,8 +72,8 @@ const Contact = () => {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-5 w-5 mt-1 text-blue-300" />
                   <div>
-                    <p className="font-bold">Titan Memorial Arena</p>
-                    <p className="text-sm text-primary-foreground/70">123 Ice Rink Way, North City, ST 54321</p>
+                    <p className="font-bold">Raiders Memorial Arena</p>
+                    <p className="text-sm text-primary-foreground/70">123 Ice Rink Way, Georgetown, ST 54321</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -87,7 +87,7 @@ const Contact = () => {
                   <Mail className="h-5 w-5 mt-1 text-blue-300" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p className="text-sm text-primary-foreground/70">info@titanshockey.com</p>
+                    <p className="text-sm text-primary-foreground/70">info@raidershockey.com</p>
                   </div>
                 </div>
               </CardContent>

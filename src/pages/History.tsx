@@ -7,11 +7,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Trophy, Star, History as HistoryIcon, Award } from 'lucide-react';
 
 const milestones = [
-  { year: "1995", event: "Titans Hockey Club Founded", description: "The club was established as an expansion team in the Northern Division." },
-  { year: "2002", event: "First Division Title", description: "After a grueling 82-game season, the Titans clinched their first ever division trophy." },
-  { year: "2010", event: "The Golden Era Begins", description: "A string of 5 consecutive playoff appearances solidified the Titans as a powerhouse." },
-  { year: "2018", event: "Championship Glory", description: "The Titans defeated the Wolves in a 7-game series to lift the Cup." },
-  { year: "2022", event: "Arena Renovation", description: "Titan Memorial Arena underwent a $50M upgrade to become a world-class facility." },
+  { year: "1995", event: "Georgetown Raiders Hockey Club Founded", description: "The club was established as an expansion team in the Northern Division." },
+  { year: "2002", event: "First Division Title", description: "After a grueling 82-game season, the Raiders clinched their first ever division trophy." },
+  { year: "2010", event: "The Golden Era Begins", description: "A string of 5 consecutive playoff appearances solidified the Raiders as a powerhouse." },
+  { year: "2018", event: "Championship Glory", description: "The Raiders defeated the Wolves in a 7-game series to lift the Cup." },
+  { year: "2022", event: "Arena Renovation", description: "Raiders Memorial Arena underwent a $50M upgrade to become a world-class facility." },
 ];
 
 const legends = [
