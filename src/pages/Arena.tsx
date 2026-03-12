@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Car, Utensils, Info, ShieldCheck, Accessibility } from 'lucide-react';
+import { MapPin, Utensils, Info, ShieldCheck, Accessibility } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Arena = () => {
@@ -72,17 +72,10 @@ const Arena = () => {
                   Arena Policies
                 </h2>
                 <ul className="space-y-4">
-                  {[
-                    "Bag Policy: Only clear bags smaller than 12x6x12 are permitted.",
-                    "No outside food or beverages allowed inside the venue.",
-                    "Doors open 90 minutes prior to puck drop.",
-                    "Alcott Arena is a 100% smoke-free facility."
-                  ].map((policy, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
-                      <span>{policy}</span>
-                    </li>
-                  ))}
+                  <li className="flex items-start gap-3 text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
+                    <span>Alcott Arena is a 100% smoke-free facility.</span>
+                  </li>
                 </ul>
               </section>
             </div>
@@ -102,32 +95,6 @@ const Arena = () => {
                     <span className="text-slate-500 text-sm italic">Interactive Map Placeholder</span>
                   </div>
                   <Button className="w-full bg-blue-600 hover:bg-blue-700">Get Directions</Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-md">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Car className="h-5 w-5 text-blue-600" />
-                    Parking
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span>North Lot (VIP)</span>
-                      <span className="font-bold">$40</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span>East Garage</span>
-                      <span className="font-bold">$25</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span>West Surface Lot</span>
-                      <span className="font-bold">$15</span>
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Pre-book parking to save 20% and guarantee your spot.</p>
                 </CardContent>
               </Card>
 
