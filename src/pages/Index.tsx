@@ -39,7 +39,7 @@ const Index = () => {
           <div className="container relative z-10 text-white">
             <div className="flex flex-col items-center text-center space-y-8 animate-in fade-in zoom-in duration-1000">
               <div className="relative group">
-                <div className="absolute -inset-12 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all duration-500" />
+                <div className="absolute -inset-12 bg-red-600/20 rounded-full blur-3xl group-hover:bg-red-600/30 transition-all duration-500" />
                 <div className="relative flex flex-col items-center">
                   <div className="mb-8 transform group-hover:scale-105 transition-transform duration-500 bg-white p-6 rounded-full shadow-[0_0_50px_rgba(255,255,255,0.2)]">
                     <img 
@@ -49,14 +49,14 @@ const Index = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <h2 className="text-2xl font-black tracking-[0.3em] text-blue-400 uppercase">Georgetown</h2>
+                    <h2 className="text-2xl font-black tracking-[0.3em] text-red-500 uppercase">Georgetown</h2>
                     <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-none italic">
                       RAIDERS
                     </h1>
                     <div className="flex items-center justify-center gap-4 pt-2">
-                      <div className="h-px w-12 bg-blue-600" />
+                      <div className="h-px w-12 bg-red-600" />
                       <span className="text-sm font-bold uppercase tracking-widest text-slate-400">Hockey Club</span>
-                      <div className="h-px w-12 bg-blue-600" />
+                      <div className="h-px w-12 bg-red-600" />
                     </div>
                   </div>
                 </div>
@@ -68,12 +68,12 @@ const Index = () => {
 
               <div className="flex flex-wrap justify-center gap-4 pt-4">
                 <Link to="/tickets">
-                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20">
+                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20">
                     Get Tickets Now
                   </Button>
                 </Link>
                 <Link to="/schedule">
-                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/20">
+                  <Button size="lg" variant="outline" className="rounded-full px-10 h-14 text-lg font-bold border-white text-white hover:bg-white hover:text-black transition-all">
                     Full Schedule
                   </Button>
                 </Link>
@@ -89,7 +89,7 @@ const Index = () => {
               <div className="text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
                   <Badge className="bg-red-600 text-white animate-pulse">LIVE NOW</Badge>
-                  <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">Match Center</p>
+                  <p className="text-red-500 font-bold uppercase tracking-widest text-sm">Match Center</p>
                 </div>
                 <h2 className="text-3xl font-bold">Raiders vs. Milton Menace</h2>
                 <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-slate-400">
@@ -106,14 +106,14 @@ const Index = () => {
               <div className="flex items-center gap-8">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
-                    <Shield className="h-10 w-10 text-blue-500" />
+                    <Shield className="h-10 w-10 text-red-600" />
                   </div>
                   <span className="font-bold">RAIDERS</span>
                 </div>
                 <div className="text-4xl font-black text-slate-700 italic">VS</div>
                 <div className="text-center">
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
-                    <Users className="h-10 w-10 text-red-500" />
+                    <Users className="h-10 w-10 text-slate-400" />
                   </div>
                   <span className="font-bold">MENACE</span>
                 </div>
@@ -130,27 +130,27 @@ const Index = () => {
         {/* Newsletter Section */}
         <section className="py-24 bg-white">
           <div className="container">
-            <div className="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+            <div className="bg-red-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 opacity-10">
                 <Mail className="w-96 h-96" />
               </div>
               <div className="relative z-10 max-w-2xl">
                 <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">STAY IN THE RAID</h2>
-                <p className="text-xl text-blue-100 mb-10 leading-relaxed">
+                <p className="text-xl text-red-100 mb-10 leading-relaxed">
                   Get exclusive news, ticket alerts, and behind-the-scenes content delivered straight to your inbox.
                 </p>
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
                   <Input 
                     type="email" 
                     placeholder="Enter your email" 
-                    className="h-14 rounded-full bg-white/10 border-white/20 text-white placeholder:text-blue-200 px-8 focus-visible:ring-white"
+                    className="h-14 rounded-full bg-white/10 border-white/20 text-white placeholder:text-red-200 px-8 focus-visible:ring-white"
                     required
                   />
-                  <Button type="submit" size="lg" className="h-14 rounded-full px-10 bg-white text-blue-600 hover:bg-blue-50 font-bold">
+                  <Button type="submit" size="lg" className="h-14 rounded-full px-10 bg-white text-red-600 hover:bg-red-50 font-bold">
                     Subscribe Now
                   </Button>
                 </form>
-                <p className="mt-6 text-sm text-blue-200">
+                <p className="mt-6 text-sm text-red-200">
                   By subscribing, you agree to our Privacy Policy and to receive marketing emails.
                 </p>
               </div>
@@ -163,7 +163,7 @@ const Index = () => {
           <div className="container">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 space-y-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 font-bold text-sm">
                   <Smartphone className="h-4 w-4" />
                   <span>Mobile Experience</span>
                 </div>
@@ -176,7 +176,7 @@ const Index = () => {
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="bg-white p-2 rounded-lg shadow-sm">
-                      <Smartphone className="h-6 w-6 text-blue-600" />
+                      <Smartphone className="h-6 w-6 text-red-600" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Add to Home Screen</h4>
@@ -202,7 +202,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="lg:w-1/2 relative">
-                <div className="absolute -inset-4 bg-blue-600/10 rounded-full blur-3xl" />
+                <div className="absolute -inset-4 bg-red-600/10 rounded-full blur-3xl" />
                 <img 
                   src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" 
                   alt="Mobile App Mockup" 
@@ -217,19 +217,19 @@ const Index = () => {
         <InstagramFeed />
 
         {/* CTA Section */}
-        <section className="py-24 bg-blue-600 text-white">
+        <section className="py-24 bg-red-600 text-white">
           <div className="container text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">READY TO JOIN THE ROAR?</h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-red-100 max-w-2xl mx-auto">
               Don't miss a single moment of the action. Season tickets and individual game passes are now available.
             </p>
             <div className="flex justify-center gap-4">
               <Link to="/tickets">
-                <Button size="lg" variant="secondary" className="rounded-full px-10 font-bold">
+                <Button size="lg" variant="secondary" className="rounded-full px-10 font-bold bg-white text-red-600 hover:bg-slate-100">
                   Season Tickets
                 </Button>
               </Link>
-              <Button size="lg" className="rounded-full px-10 font-bold bg-red-600 hover:bg-red-700 text-white border-none">
+              <Button size="lg" variant="outline" className="rounded-full px-10 font-bold border-white text-white hover:bg-white hover:text-red-600">
                 Group Bookings
               </Button>
             </div>

@@ -57,7 +57,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2 ml-2">
             <CartDrawer />
             <Link to="/tickets">
-              <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs">
+              <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs bg-red-600 hover:bg-red-700">
                 Tickets
               </Button>
             </Link>
@@ -86,7 +86,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "flex items-center space-x-3 text-sm font-medium p-2 rounded-md",
-                location.pathname === item.path ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+                location.pathname === item.path ? "bg-red-50 text-red-600" : "text-muted-foreground"
               )}
             >
               <item.icon className="h-4 w-4" />
@@ -94,7 +94,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link to="/tickets" onClick={() => setIsOpen(false)}>
-            <Button className="w-full rounded-full mt-2">Tickets</Button>
+            <Button className="w-full rounded-full mt-2 bg-red-600 hover:bg-red-700">Tickets</Button>
           </Link>
         </div>
       )}

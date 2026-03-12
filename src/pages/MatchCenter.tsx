@@ -5,9 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Trophy, Clock, Zap, Shield, Users, Target } from 'lucide-react';
+import { Trophy, Clock, Zap, Shield } from 'lucide-react';
 
 const MatchCenter = () => {
   return (
@@ -16,7 +15,7 @@ const MatchCenter = () => {
       
       <main className="flex-grow">
         {/* Live Score Header */}
-        <div className="bg-slate-900 text-white py-12 border-b border-slate-800">
+        <div className="bg-slate-950 text-white py-12 border-b border-slate-800">
           <div className="container">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
@@ -25,7 +24,7 @@ const MatchCenter = () => {
                 </div>
                 <div>
                   <h2 className="text-2xl font-black tracking-tighter">GEORGETOWN RAIDERS</h2>
-                  <p className="text-slate-400 font-bold">HOME</p>
+                  <p className="text-red-500 font-bold">HOME</p>
                 </div>
               </div>
 
@@ -44,7 +43,7 @@ const MatchCenter = () => {
 
               <div className="flex flex-col items-center text-center md:items-end md:text-right gap-4">
                 <div className="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center p-6 shadow-xl">
-                  <Shield className="h-full w-full text-red-500" />
+                  <Shield className="h-full w-full text-slate-400" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-black tracking-tighter">MILTON MENACE</h2>
@@ -60,17 +59,17 @@ const MatchCenter = () => {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
               <Tabs defaultValue="summary" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 rounded-xl h-12">
-                  <TabsTrigger value="summary">Game Summary</TabsTrigger>
-                  <TabsTrigger value="stats">Team Stats</TabsTrigger>
-                  <TabsTrigger value="lineups">Lineups</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-3 rounded-xl h-12 bg-slate-100">
+                  <TabsTrigger value="summary" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Game Summary</TabsTrigger>
+                  <TabsTrigger value="stats" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Team Stats</TabsTrigger>
+                  <TabsTrigger value="lineups" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Lineups</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="summary" className="mt-6 space-y-6">
                   <Card className="border-none shadow-sm">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Zap className="h-5 w-5 text-yellow-500" />
+                        <Zap className="h-5 w-5 text-red-600" />
                         Scoring Summary
                       </CardTitle>
                     </CardHeader>
@@ -93,7 +92,7 @@ const MatchCenter = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <Badge variant="outline" className="text-[10px] font-bold mb-1">{goal.team}</Badge>
+                            <Badge variant="outline" className={goal.team === "RAIDERS" ? "text-red-600 border-red-200" : "text-slate-400"}>{goal.team}</Badge>
                             <p className="text-sm font-black">{goal.score}</p>
                           </div>
                         </div>
@@ -117,17 +116,17 @@ const MatchCenter = () => {
                       ].map((stat, i) => (
                         <div key={i} className="space-y-2">
                           <div className="flex justify-between text-sm font-bold">
-                            <span>{stat.home}</span>
+                            <span className="text-red-600">{stat.home}</span>
                             <span className="text-muted-foreground uppercase tracking-widest text-[10px]">{stat.label}</span>
                             <span>{stat.away}</span>
                           </div>
                           <div className="flex h-2 w-full rounded-full overflow-hidden bg-slate-100">
                             <div 
-                              className="bg-blue-600 h-full" 
+                              className="bg-red-600 h-full" 
                               style={{ width: typeof stat.home === 'number' ? `${(stat.home / (stat.home + (stat.away as number))) * 100}%` : '50%' }} 
                             />
                             <div 
-                              className="bg-red-500 h-full" 
+                              className="bg-slate-400 h-full" 
                               style={{ width: typeof stat.away === 'number' ? `${(stat.away / ((stat.home as number) + stat.away)) * 100}%` : '50%' }} 
                             />
                           </div>
@@ -141,7 +140,7 @@ const MatchCenter = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="border-none shadow-sm">
                       <CardHeader>
-                        <CardTitle className="text-sm font-bold text-blue-600">RAIDERS LINEUP</CardTitle>
+                        <CardTitle className="text-sm font-bold text-red-600">RAIDERS LINEUP</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-2">
                         <p className="text-xs font-bold text-muted-foreground border-b pb-1">FORWARDS</p>
@@ -156,7 +155,7 @@ const MatchCenter = () => {
                     </Card>
                     <Card className="border-none shadow-sm">
                       <CardHeader>
-                        <CardTitle className="text-sm font-bold text-red-600">MENACE LINEUP</CardTitle>
+                        <CardTitle className="text-sm font-bold text-slate-600">MENACE LINEUP</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-2">
                         <p className="text-xs font-bold text-muted-foreground border-b pb-1">FORWARDS</p>
@@ -176,7 +175,7 @@ const MatchCenter = () => {
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <Card className="border-none shadow-md bg-blue-600 text-white">
+              <Card className="border-none shadow-md bg-red-600 text-white">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Trophy className="h-5 w-5" />
@@ -189,7 +188,7 @@ const MatchCenter = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-black">BRADEN LAUWAERT</h3>
-                    <p className="text-blue-200 font-bold">2 GOALS, 1 ASSIST</p>
+                    <p className="text-red-100 font-bold">2 GOALS, 1 ASSIST</p>
                   </div>
                 </CardContent>
               </Card>
