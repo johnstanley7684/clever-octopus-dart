@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, Shield, Zap, Target, Activity } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const playersData = {
   "44": { name: "Erik Johansson", number: "44", position: "Defense", height: "6'4\"", weight: "220 lbs", shot: "Right", image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=800", bio: "Known for his physical presence and booming slap shot, Johansson has been a cornerstone of the Titans defense for 4 seasons.", stats: { gp: 42, g: 8, a: 28, pts: 36, pim: 42, plusMinus: 22 } },

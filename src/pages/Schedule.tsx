@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Trophy, Clock } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
 
 const games = [
   { id: 1, opponent: "Wolves", date: "Oct 12, 2024", time: "7:30 PM", venue: "Titan Memorial Arena", type: "Home", status: "Upcoming" },

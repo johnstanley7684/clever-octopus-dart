@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 const standings = [
   { rank: 1, team: "Titans", gp: 50, w: 35, l: 12, otl: 3, pts: 73, gf: 164, ga: 112, diff: "+52", streak: "W4" },
