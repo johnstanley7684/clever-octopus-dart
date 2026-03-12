@@ -85,16 +85,6 @@ const Shop = () => {
             </Card>
           ))}
         </div>
-
-        <div className="mt-20 bg-slate-900 text-white rounded-3xl p-12 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-2">Titans Rewards</h2>
-            <p className="text-slate-400">Join our loyalty program and earn points on every purchase.</p>
-          </div>
-          <Button variant="secondary" size="lg" className="rounded-full px-10 font-bold">
-            Join Now
-          </Button>
-        </div>
       </main>
 
       <Footer />
