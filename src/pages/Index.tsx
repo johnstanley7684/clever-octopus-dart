@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import ScoreTicker from '@/components/ScoreTicker';
 import InstagramFeed from '@/components/InstagramFeed';
 import { Button } from '@/components/ui/button';
-import { Calendar, Trophy, Users, Shield } from 'lucide-react';
+import { Calendar, Trophy, Users, Shield, Smartphone, Apple, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -30,7 +30,6 @@ const Index = () => {
           
           <div className="container relative z-10 text-white">
             <div className="flex flex-col items-center text-center space-y-8 animate-in fade-in zoom-in duration-1000">
-              {/* Official Logo Overlay with Shield Background */}
               <div className="relative group">
                 <div className="absolute -inset-12 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all duration-500" />
                 <div className="relative flex flex-col items-center">
@@ -113,6 +112,61 @@ const Index = () => {
                   Get Tickets
                 </Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Mobile App Section */}
+        <section className="py-24 bg-slate-50 overflow-hidden">
+          <div className="container">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="lg:w-1/2 space-y-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm">
+                  <Smartphone className="h-4 w-4" />
+                  <span>Mobile Experience</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900">
+                  THE RAIDERS IN YOUR POCKET
+                </h2>
+                <p className="text-xl text-slate-600 leading-relaxed">
+                  Access live scores, digital tickets, and exclusive content anywhere. Our web app is optimized for your mobile device—no download required.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-white p-2 rounded-lg shadow-sm">
+                      <Smartphone className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Add to Home Screen</h4>
+                      <p className="text-slate-500 text-sm">Open this site in Safari or Chrome and select "Add to Home Screen" for an app-like experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <Button variant="outline" className="rounded-xl h-14 px-6 gap-3 border-slate-200 hover:bg-slate-100">
+                    <Apple className="h-6 w-6" />
+                    <div className="text-left">
+                      <p className="text-[10px] uppercase font-bold leading-none">Coming soon to</p>
+                      <p className="text-sm font-bold">App Store</p>
+                    </div>
+                  </Button>
+                  <Button variant="outline" className="rounded-xl h-14 px-6 gap-3 border-slate-200 hover:bg-slate-100">
+                    <PlayCircle className="h-6 w-6" />
+                    <div className="text-left">
+                      <p className="text-[10px] uppercase font-bold leading-none">Coming soon to</p>
+                      <p className="text-sm font-bold">Google Play</p>
+                    </div>
+                  </Button>
+                </div>
+              </div>
+              <div className="lg:w-1/2 relative">
+                <div className="absolute -inset-4 bg-blue-600/10 rounded-full blur-3xl" />
+                <img 
+                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" 
+                  alt="Mobile App Mockup" 
+                  className="relative rounded-[3rem] shadow-2xl border-[8px] border-slate-900 w-full max-w-[320px] mx-auto"
+                />
+              </div>
             </div>
           </div>
         </section>
