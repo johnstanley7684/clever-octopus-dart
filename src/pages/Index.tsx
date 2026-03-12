@@ -7,10 +7,12 @@ import ScoreTicker from '@/components/ScoreTicker';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Trophy, Users, ArrowRight } from 'lucide-react';
+import { Calendar, Trophy, Users, ArrowRight, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
+  const logoUrl = "https://drive.google.com/uc?export=view&id=1RbZlUTabJ8Gd-Sf3ennN1FnOr8fhxcA7";
+
   return (
     <div className="min-h-screen flex flex-col">
       <ScoreTicker />
@@ -18,34 +20,55 @@ const Index = () => {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative h-[80vh] flex items-center overflow-hidden">
+        <section className="relative h-[85vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&q=80&w=1920" 
-              alt="Raiders Hockey Action" 
-              className="w-full h-full object-cover brightness-[0.4]"
+              src="https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=1920" 
+              alt="Raiders Arena Background" 
+              className="w-full h-full object-cover brightness-[0.3]"
             />
           </div>
+          
           <div className="container relative z-10 text-white">
-            <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-1000">
-              <Badge className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 text-sm font-bold uppercase tracking-widest">
-                Season 2024/25
-              </Badge>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
-                UNLEASH THE <span className="text-blue-500">RAIDERS</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-300 max-w-xl leading-relaxed">
-                Experience the speed, the power, and the glory. Join us at the Raiders Memorial Arena for an unforgettable season.
+            <div className="flex flex-col items-center text-center space-y-8 animate-in fade-in zoom-in duration-1000">
+              {/* Official Logo Overlay */}
+              <div className="relative group">
+                <div className="absolute -inset-12 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all duration-500" />
+                <div className="relative flex flex-col items-center">
+                  <div className="mb-8 transform group-hover:scale-105 transition-transform duration-500">
+                    <img 
+                      src={logoUrl} 
+                      alt="Georgetown Raiders Official Logo" 
+                      className="h-48 md:h-64 w-auto drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <h2 className="text-2xl font-black tracking-[0.3em] text-blue-400 uppercase">Georgetown</h2>
+                    <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-none italic">
+                      RAIDERS
+                    </h1>
+                    <div className="flex items-center justify-center gap-4 pt-2">
+                      <div className="h-px w-12 bg-blue-600" />
+                      <span className="text-sm font-bold uppercase tracking-widest text-slate-400">Hockey Club</span>
+                      <div className="h-px w-12 bg-blue-600" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-medium">
+                The legacy continues. Join the roar at the Raiders Memorial Arena for the 2024/25 season.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
+
+              <div className="flex flex-wrap justify-center gap-4 pt-4">
                 <Link to="/tickets">
-                  <Button size="lg" className="rounded-full px-8 text-lg font-bold bg-blue-600 hover:bg-blue-700">
-                    Buy Tickets
+                  <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20">
+                    Get Tickets Now
                   </Button>
                 </Link>
                 <Link to="/schedule">
-                  <Button size="lg" variant="outline" className="rounded-full px-8 text-lg font-bold border-white text-white hover:bg-white hover:text-black">
-                    View Schedule
+                  <Button size="lg" variant="outline" className="rounded-full px-10 h-14 text-lg font-bold border-white/20 text-white hover:bg-white hover:text-black backdrop-blur-sm">
+                    Full Schedule
                   </Button>
                 </Link>
               </div>
@@ -74,7 +97,7 @@ const Index = () => {
               <div className="flex items-center gap-8">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
-                    <Trophy className="h-10 w-10 text-blue-500" />
+                    <Shield className="h-10 w-10 text-blue-500" />
                   </div>
                   <span className="font-bold">RAIDERS</span>
                 </div>

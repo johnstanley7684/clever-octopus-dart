@@ -1,16 +1,22 @@
 "use client";
 
 import React from 'react';
-import { Trophy, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
+  const logoUrl = "https://drive.google.com/uc?export=view&id=1RbZlUTabJ8Gd-Sf3ennN1FnOr8fhxcA7";
+
   return (
     <footer className="bg-slate-950 text-slate-200 border-t border-slate-800">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Trophy className="h-8 w-8 text-blue-400" />
+            <div className="flex items-center space-x-3">
+              <img 
+                src={logoUrl} 
+                alt="Georgetown Raiders Logo" 
+                className="h-12 w-auto object-contain brightness-110"
+              />
               <span className="text-2xl font-bold tracking-tighter text-white">RAIDERS</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Trophy, Users, BarChart3, Image, Handshake, Mail, Menu, X, Calendar, Ticket, Newspaper, Map, ShoppingBag, ListOrdered, Heart, GraduationCap, HelpCircle, LayoutDashboard } from 'lucide-react';
+import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, GraduationCap, HelpCircle, LayoutDashboard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Home', path: '/', icon: Trophy },
+    { name: 'Home', path: '/', icon: Heart },
     { name: 'Schedule', path: '/schedule', icon: Calendar },
     { name: 'Roster', path: '/roster', icon: Users },
     { name: 'Stats', path: '/stats', icon: BarChart3 },
@@ -25,14 +25,18 @@ const Navbar = () => {
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
   ];
 
+  const logoUrl = "https://drive.google.com/uc?export=view&id=1RbZlUTabJ8Gd-Sf3ennN1FnOr8fhxcA7";
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="bg-primary p-1.5 rounded-lg">
-            <Trophy className="h-6 w-6 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold tracking-tight">GEORGETOWN RAIDERS</span>
+        <Link to="/" className="flex items-center space-x-3">
+          <img 
+            src={logoUrl} 
+            alt="Georgetown Raiders Logo" 
+            className="h-10 w-auto object-contain"
+          />
+          <span className="text-xl font-bold tracking-tight hidden sm:inline-block">GEORGETOWN RAIDERS</span>
         </Link>
 
         {/* Desktop Navigation */}
