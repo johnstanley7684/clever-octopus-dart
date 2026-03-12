@@ -10,12 +10,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 
 const games = [
-  { id: 1, opponent: "Wolves", date: "Oct 12, 2024", time: "7:30 PM", venue: "Titan Memorial Arena", type: "Home", status: "Upcoming" },
-  { id: 2, opponent: "Blizzards", date: "Oct 15, 2024", time: "8:00 PM", venue: "Frost Center", type: "Away", status: "Upcoming" },
-  { id: 3, opponent: "Ravens", date: "Oct 19, 2024", time: "7:00 PM", venue: "Titan Memorial Arena", type: "Home", status: "Upcoming" },
-  { id: 4, opponent: "Kings", date: "Oct 5, 2024", time: "7:30 PM", venue: "Titan Memorial Arena", type: "Home", status: "Completed", result: "W 4-2" },
-  { id: 5, opponent: "Sharks", date: "Oct 1, 2024", time: "7:00 PM", venue: "Oceanic Arena", type: "Away", status: "Completed", result: "L 1-3" },
-  { id: 6, opponent: "Bears", date: "Sep 28, 2024", time: "7:30 PM", venue: "Titan Memorial Arena", type: "Home", status: "Completed", result: "W 5-0" },
+  { id: 1, opponent: "Milton Menace", date: "Oct 19, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 2, opponent: "Oakville Blades", date: "Oct 23, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 3, opponent: "Collingwood Blues", date: "Oct 26, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 4, opponent: "Milton Menace", date: "Oct 30, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 5, opponent: "Buffalo Jr. Sabres", date: "Nov 2, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
+  { id: 6, opponent: "King City", date: "Oct 9, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "W 4-1" },
+  { id: 7, opponent: "Milton Menace", date: "Oct 5, 2024", time: "7:30 PM", venue: "Milton Memorial Arena", type: "Away", status: "Completed", result: "L 2-3" },
+  { id: 8, opponent: "Burlington Cougars", date: "Oct 2, 2024", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "W 5-2" },
 ];
 
 const Schedule = () => {
@@ -30,7 +32,7 @@ const Schedule = () => {
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-4">Season Schedule</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Don't miss a single hit. Track our journey through the 2024/25 season.
+            OJHL 2024-25 Regular Season. Join us at Alcott Arena for the Raid!
           </p>
         </div>
 
@@ -47,7 +49,7 @@ const Schedule = () => {
               <Card key={game.id} className="overflow-hidden border-none shadow-sm hover:shadow-md transition-all">
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row items-center">
-                    <div className="bg-primary text-primary-foreground p-6 flex flex-col items-center justify-center min-w-[140px]">
+                    <div className="bg-blue-600 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
                       <span className="text-sm font-bold uppercase opacity-70">{game.date.split(',')[0]}</span>
                       <span className="text-2xl font-black">{game.date.split(' ')[1].replace(',', '')}</span>
                     </div>
@@ -57,7 +59,7 @@ const Schedule = () => {
                           <Badge variant={game.type === "Home" ? "default" : "outline"} className="mb-2">
                             {game.type} Game
                           </Badge>
-                          <h3 className="text-xl font-bold">Titans vs. {game.opponent}</h3>
+                          <h3 className="text-xl font-bold">Raiders vs. {game.opponent}</h3>
                         </div>
                       </div>
                       <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
@@ -70,7 +72,7 @@ const Schedule = () => {
                           <span>{game.venue}</span>
                         </div>
                       </div>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors">
+                      <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors">
                         Tickets
                       </button>
                     </div>
@@ -91,7 +93,7 @@ const Schedule = () => {
                     </div>
                     <div className="flex-grow p-6 flex flex-col md:flex-row items-center justify-between gap-6">
                       <div>
-                        <h3 className="text-xl font-bold">Titans vs. {game.opponent}</h3>
+                        <h3 className="text-xl font-bold">Raiders vs. {game.opponent}</h3>
                         <p className="text-sm text-muted-foreground">{game.venue}</p>
                       </div>
                       <div className="flex items-center gap-4">

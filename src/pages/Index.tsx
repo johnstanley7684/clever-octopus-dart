@@ -82,11 +82,11 @@ const Index = () => {
             <div className="bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
               <div className="text-center md:text-left">
                 <p className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-2">Next Home Game</p>
-                <h2 className="text-3xl font-bold">Raiders vs. Wolves</h2>
+                <h2 className="text-3xl font-bold">Raiders vs. Milton Menace</h2>
                 <div className="flex items-center justify-center md:justify-start gap-4 mt-4 text-slate-400">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
-                    <span>Saturday, Oct 12</span>
+                    <span>Saturday, Oct 19</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Trophy className="h-4 w-4" />
@@ -106,7 +106,7 @@ const Index = () => {
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-2">
                     <Users className="h-10 w-10 text-red-500" />
                   </div>
-                  <span className="font-bold">WOLVES</span>
+                  <span className="font-bold">MENACE</span>
                 </div>
               </div>
               <Link to="/tickets">
