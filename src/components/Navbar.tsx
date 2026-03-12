@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Users, BarChart3, Menu, X, Calendar, Newspaper, Map, ShoppingBag, ListOrdered, Heart, HelpCircle, LayoutDashboard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import CartDrawer from './CartDrawer';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -51,20 +52,26 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <Link to="/tickets">
-            <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs ml-2">
-              Tickets
-            </Button>
-          </Link>
+          <div className="flex items-center gap-2 ml-2">
+            <CartDrawer />
+            <Link to="/tickets">
+              <Button variant="default" size="sm" className="rounded-full px-4 h-8 text-xs">
+                Tickets
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <button
-          className="xl:hidden p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-2 xl:hidden">
+          <CartDrawer />
+          <button
+            className="p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

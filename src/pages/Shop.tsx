@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ShoppingCart, Heart, Filter, Search } from 'lucide-react';
 import { showSuccess } from '@/utils/toast';
+import { useCart } from '@/context/CartContext';
 
 const products = [
   { id: 1, name: "Home Authentic Jersey", price: "$180.00", category: "Apparel", image: "https://images.unsplash.com/photo-1580748141549-71748d60bdc9?auto=format&fit=crop&q=80&w=400", tag: "Best Seller" },
@@ -19,8 +20,16 @@ const products = [
 ];
 
 const Shop = () => {
-  const addToCart = (name: string) => {
-    showSuccess(`${name} added to your cart!`);
+  const { addItem } = useCart();
+
+  const handleAddToCart = (product: typeof products[0]) => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+    showSuccess(`${product.name} added to your cart!`);
   };
 
   return (
@@ -75,7 +84,7 @@ const Shop = () => {
               </CardContent>
               <CardFooter className="p-6 pt-0">
                 <Button 
-                  onClick={() => addToCart(product.name)}
+                  onClick={() => handleAddToCart(product)}
                   className="w-full rounded-full gap-2 bg-slate-900 hover:bg-blue-600 transition-colors"
                 >
                   <ShoppingCart className="h-4 w-4" />
