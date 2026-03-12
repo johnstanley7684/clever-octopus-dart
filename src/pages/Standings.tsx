@@ -42,49 +42,49 @@ const allStandings = {
 
 const StandingsTable = ({ data }: { data: any[] }) => (
   <Table>
-    <TableHeader className="bg-slate-100">
-      <TableRow>
-        <TableHead className="w-16 text-center">Rank</TableHead>
-        <TableHead>Team</TableHead>
-        <TableHead className="text-center">GP</TableHead>
-        <TableHead className="text-center">W</TableHead>
-        <TableHead className="text-center">L</TableHead>
-        <TableHead className="text-center">OTL</TableHead>
-        <TableHead className="text-center font-bold">PTS</TableHead>
-        <TableHead className="text-center hidden md:table-cell">GF</TableHead>
-        <TableHead className="text-center hidden md:table-cell">GA</TableHead>
-        <TableHead className="text-center hidden md:table-cell">DIFF</TableHead>
-        <TableHead className="text-center">STREAK</TableHead>
+    <TableHeader className="bg-zinc-950">
+      <TableRow className="border-zinc-800">
+        <TableHead className="w-16 text-center text-slate-400">Rank</TableHead>
+        <TableHead className="text-slate-400">Team</TableHead>
+        <TableHead className="text-center text-slate-400">GP</TableHead>
+        <TableHead className="text-center text-slate-400">W</TableHead>
+        <TableHead className="text-center text-slate-400">L</TableHead>
+        <TableHead className="text-center text-slate-400">OTL</TableHead>
+        <TableHead className="text-center font-bold text-slate-400">PTS</TableHead>
+        <TableHead className="text-center hidden md:table-cell text-slate-400">GF</TableHead>
+        <TableHead className="text-center hidden md:table-cell text-slate-400">GA</TableHead>
+        <TableHead className="text-center hidden md:table-cell text-slate-400">DIFF</TableHead>
+        <TableHead className="text-center text-slate-400">STREAK</TableHead>
       </TableRow>
     </TableHeader>
     <TableBody>
       {data.map((row) => (
-        <TableRow key={row.team} className={row.team === "Georgetown Raiders" ? "bg-red-50/50 font-medium" : ""}>
-          <TableCell className="text-center font-bold">{row.rank}</TableCell>
-          <TableCell className="flex items-center gap-3">
+        <TableRow key={row.team} className={cn("border-zinc-800", row.team === "Georgetown Raiders" ? "bg-red-900/10 font-medium" : "")}>
+          <TableCell className="text-center font-bold text-white">{row.rank}</TableCell>
+          <TableCell className="flex items-center gap-3 text-white">
             <div className={cn(
               "w-2 h-2 rounded-full",
-              row.rank <= 4 ? "bg-green-500" : "bg-slate-300"
+              row.rank <= 4 ? "bg-green-500" : "bg-zinc-700"
             )} />
             {row.team}
-            {row.team === "Georgetown Raiders" && <Badge variant="outline" className="ml-2 text-[10px] uppercase py-0 border-red-200 text-red-600">HOME TEAM</Badge>}
+            {row.team === "Georgetown Raiders" && <Badge variant="outline" className="ml-2 text-[10px] uppercase py-0 border-red-600 text-red-600">HOME TEAM</Badge>}
           </TableCell>
-          <TableCell className="text-center">{row.gp}</TableCell>
-          <TableCell className="text-center">{row.w}</TableCell>
-          <TableCell className="text-center">{row.l}</TableCell>
-          <TableCell className="text-center">{row.otl}</TableCell>
+          <TableCell className="text-center text-slate-400">{row.gp}</TableCell>
+          <TableCell className="text-center text-slate-400">{row.w}</TableCell>
+          <TableCell className="text-center text-slate-400">{row.l}</TableCell>
+          <TableCell className="text-center text-slate-400">{row.otl}</TableCell>
           <TableCell className="text-center font-bold text-red-600">{row.pts}</TableCell>
-          <TableCell className="text-center hidden md:table-cell">{row.gf}</TableCell>
-          <TableCell className="text-center hidden md:table-cell">{row.ga}</TableCell>
+          <TableCell className="text-center hidden md:table-cell text-slate-400">{row.gf}</TableCell>
+          <TableCell className="text-center hidden md:table-cell text-slate-400">{row.ga}</TableCell>
           <TableCell className="text-center hidden md:table-cell">
-            <span className={row.diff.startsWith('+') ? "text-green-600" : "text-red-600"}>
+            <span className={row.diff.startsWith('+') ? "text-green-500" : "text-red-500"}>
               {row.diff}
             </span>
           </TableCell>
           <TableCell className="text-center">
             <Badge variant="outline" className={cn(
-              "font-mono",
-              row.streak.startsWith('W') ? "border-green-200 text-green-700 bg-green-50" : "border-red-200 text-red-700 bg-red-50"
+              "font-mono border-none",
+              row.streak.startsWith('W') ? "text-green-500 bg-green-900/20" : "text-red-500 bg-red-900/20"
             )}>
               {row.streak}
             </Badge>
@@ -97,31 +97,31 @@ const StandingsTable = ({ data }: { data: any[] }) => (
 
 const Standings = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow container py-12">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4">Official OJHL Standings</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Official OJHL Standings</h1>
+          <p className="text-slate-400 max-w-2xl mx-auto">
             Current 2025/26 Regular Season Standings across all divisions.
           </p>
         </div>
 
         <Tabs defaultValue="West" className="w-full">
           <div className="flex justify-center mb-8">
-            <TabsList className="grid w-full max-w-2xl grid-cols-4 bg-slate-200">
-              <TabsTrigger value="North">North</TabsTrigger>
-              <TabsTrigger value="South">South</TabsTrigger>
-              <TabsTrigger value="East">East</TabsTrigger>
-              <TabsTrigger value="West">West</TabsTrigger>
+            <TabsList className="grid w-full max-w-2xl grid-cols-4 bg-zinc-900">
+              <TabsTrigger value="North" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">North</TabsTrigger>
+              <TabsTrigger value="South" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">South</TabsTrigger>
+              <TabsTrigger value="East" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">East</TabsTrigger>
+              <TabsTrigger value="West" className="data-[state=active]:bg-red-600 data-[state=active]:text-white text-slate-400">West</TabsTrigger>
             </TabsList>
           </div>
 
           {Object.entries(allStandings).map(([division, data]) => (
             <TabsContent key={division} value={division} className="animate-in fade-in duration-500">
-              <Card className="border-none shadow-lg overflow-hidden">
-                <CardHeader className="bg-slate-900 text-white">
+              <Card className="border-none bg-zinc-900 shadow-lg overflow-hidden">
+                <CardHeader className="bg-zinc-950 text-white border-b border-zinc-800">
                   <CardTitle className="flex items-center justify-between">
                     <span>{division} Division</span>
                     <Badge variant="secondary" className="bg-red-600 text-white border-none">Season 2025/26</Badge>
@@ -135,13 +135,13 @@ const Standings = () => {
           ))}
         </Tabs>
         
-        <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground justify-center">
+        <div className="mt-8 flex items-center gap-6 text-sm text-slate-500 justify-center">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-green-500" />
             <span>Playoff Position</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-slate-300" />
+            <div className="w-3 h-3 rounded-full bg-zinc-700" />
             <span>In Contention</span>
           </div>
         </div>

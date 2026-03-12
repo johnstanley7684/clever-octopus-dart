@@ -24,98 +24,98 @@ const seasonTrend = [
 
 const Stats = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow container py-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-4">Official OJHL Statistics</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Official OJHL Statistics</h1>
+          <p className="text-slate-400">
             Performance data for the Georgetown Raiders sourced from the official OJHL network.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <Card className="lg:col-span-2 border-none shadow-md">
+          <Card className="lg:col-span-2 border-none bg-zinc-900 shadow-md">
             <CardHeader>
-              <CardTitle>Scoring Trends (Goals Per Game)</CardTitle>
+              <CardTitle className="text-white">Scoring Trends (Goals Per Game)</CardTitle>
             </CardHeader>
             <CardContent className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={seasonTrend}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                  <XAxis dataKey="game" axisLine={false} tickLine={false} />
-                  <YAxis axisLine={false} tickLine={false} />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#18181b" />
+                  <XAxis dataKey="game" axisLine={false} tickLine={false} tick={{fill: '#71717a'}} />
+                  <YAxis axisLine={false} tickLine={false} tick={{fill: '#71717a'}} />
                   <Tooltip 
-                    contentStyle={{ backgroundColor: '#fff', borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
+                    contentStyle={{ backgroundColor: '#18181b', borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.5)', color: '#fff' }}
                   />
-                  <Line type="monotone" dataKey="goalsFor" stroke="#2563eb" strokeWidth={3} dot={{ r: 4 }} name="Goals For" />
-                  <Line type="monotone" dataKey="goalsAgainst" stroke="#ef4444" strokeWidth={3} dot={{ r: 4 }} name="Goals Against" />
+                  <Line type="monotone" dataKey="goalsFor" stroke="#ef4444" strokeWidth={3} dot={{ r: 4, fill: '#ef4444' }} name="Goals For" />
+                  <Line type="monotone" dataKey="goalsAgainst" stroke="#71717a" strokeWidth={3} dot={{ r: 4, fill: '#71717a' }} name="Goals Against" />
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-md bg-slate-900 text-white">
+          <Card className="border-none bg-zinc-950 text-white border border-zinc-800">
             <CardHeader>
               <CardTitle>Season Summary</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">Record (W-L-OTL-SOL)</span>
+              <div className="flex justify-between items-center border-b border-zinc-800 pb-3">
+                <span className="text-slate-500">Record (W-L-OTL-SOL)</span>
                 <span className="font-bold text-xl">34-16-1-3</span>
               </div>
-              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">Points</span>
+              <div className="flex justify-between items-center border-b border-zinc-800 pb-3">
+                <span className="text-slate-500">Points</span>
                 <span className="font-bold text-xl">72</span>
               </div>
-              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">West Division Rank</span>
-                <span className="font-bold text-xl text-blue-400">2nd</span>
+              <div className="flex justify-between items-center border-b border-zinc-800 pb-3">
+                <span className="text-slate-500">West Division Rank</span>
+                <span className="font-bold text-xl text-red-600">2nd</span>
               </div>
-              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                <span className="text-slate-400">Power Play %</span>
+              <div className="flex justify-between items-center border-b border-zinc-800 pb-3">
+                <span className="text-slate-500">Power Play %</span>
                 <span className="font-bold text-xl">23.5%</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-slate-400">Penalty Kill %</span>
+                <span className="text-slate-500">Penalty Kill %</span>
                 <span className="font-bold text-xl">85.2%</span>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        <Card className="border-none shadow-md overflow-hidden">
-          <CardHeader className="bg-white border-b">
-            <CardTitle>Player Leaderboard</CardTitle>
+        <Card className="border-none bg-zinc-900 shadow-md overflow-hidden">
+          <CardHeader className="bg-zinc-950 border-b border-zinc-800">
+            <CardTitle className="text-white">Player Leaderboard</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             <Table>
-              <TableHeader className="bg-slate-50">
-                <TableRow>
-                  <TableHead className="pl-6">Player</TableHead>
-                  <TableHead className="text-center">GP</TableHead>
-                  <TableHead className="text-center">G</TableHead>
-                  <TableHead className="text-center">A</TableHead>
-                  <TableHead className="text-center font-bold">PTS</TableHead>
-                  <TableHead className="text-center">+/-</TableHead>
-                  <TableHead className="text-center pr-6">PIM</TableHead>
+              <TableHeader className="bg-zinc-950">
+                <TableRow className="border-zinc-800">
+                  <TableHead className="pl-6 text-slate-400">Player</TableHead>
+                  <TableHead className="text-center text-slate-400">GP</TableHead>
+                  <TableHead className="text-center text-slate-400">G</TableHead>
+                  <TableHead className="text-center text-slate-400">A</TableHead>
+                  <TableHead className="text-center font-bold text-slate-400">PTS</TableHead>
+                  <TableHead className="text-center text-slate-400">+/-</TableHead>
+                  <TableHead className="text-center pr-6 text-slate-400">PIM</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {playerStats.map((player) => (
-                  <TableRow key={player.id} className="hover:bg-slate-50/50 transition-colors">
-                    <TableCell className="font-bold pl-6">{player.name}</TableCell>
-                    <TableCell className="text-center">{player.stats.gp}</TableCell>
-                    <TableCell className="text-center">{player.stats.g}</TableCell>
-                    <TableCell className="text-center">{player.stats.a}</TableCell>
-                    <TableCell className="text-center font-black text-blue-600">{player.stats.pts}</TableCell>
+                  <TableRow key={player.id} className="hover:bg-zinc-800/50 transition-colors border-zinc-800">
+                    <TableCell className="font-bold pl-6 text-white">{player.name}</TableCell>
+                    <TableCell className="text-center text-slate-400">{player.stats.gp}</TableCell>
+                    <TableCell className="text-center text-slate-400">{player.stats.g}</TableCell>
+                    <TableCell className="text-center text-slate-400">{player.stats.a}</TableCell>
+                    <TableCell className="text-center font-black text-red-600">{player.stats.pts}</TableCell>
                     <TableCell className="text-center">
-                      <span className={player.stats.plusMinus > 0 ? "text-green-600 font-bold" : "text-red-600 font-bold"}>
+                      <span className={player.stats.plusMinus > 0 ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
                         {player.stats.plusMinus > 0 ? `+${player.stats.plusMinus}` : player.stats.plusMinus}
                       </span>
                     </TableCell>
-                    <TableCell className="text-center pr-6">{player.stats.pim}</TableCell>
+                    <TableCell className="text-center pr-6 text-slate-400">{player.stats.pim}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
