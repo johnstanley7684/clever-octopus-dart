@@ -7,28 +7,28 @@
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
-    /* Red boxes with black text */
+    /* Red boxes with white text for buttons/primary */
     --card: 0 72.2% 50.6%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
     --popover: 0 72.2% 50.6%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
     --primary: 0 72.2% 50.6%;
-    --primary-foreground: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
     /* White areas with dark red text */
     --secondary: 0 0% 100%;
-    --secondary-foreground: 0 100% 20%;
+    --secondary-foreground: 0 0% 100%; /* Changed to white for buttons */
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
     --accent: 0 72.2% 50.6%;
-    --accent-foreground: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
