@@ -17,7 +17,7 @@ const games = [
   { id: 3, opponent: "Burlington Cougars", date: "Sep 27, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
   { id: 4, opponent: "Collingwood Blues", date: "Oct 4, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
   { id: 5, opponent: "Buffalo Jr. Sabres", date: "Oct 11, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Upcoming" },
-  { id: 6, opponent: "King City Royals", date: "Sep 6, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Completed", result: "W 4-2" },
+  { id: 6, opponent: "King City Royals", date: "Sep 6, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "W 4-2" },
   { id: 7, opponent: "North York Rangers", date: "Aug 30, 2025", time: "7:30 PM", venue: "Vic Johnston CC", type: "Away", status: "Completed", result: "W 3-1" },
   { id: 8, opponent: "Toronto Jr. Canadiens", date: "Aug 23, 2025", time: "7:30 PM", venue: "Alcott Arena", type: "Home", status: "Completed", result: "L 2-4" },
 ];
