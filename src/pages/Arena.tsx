@@ -23,7 +23,7 @@ const Arena = () => {
           />
           <div className="relative z-10 text-center text-white container">
             <h1 className="text-5xl font-black tracking-tighter mb-4">ALCOTT ARENA</h1>
-            <p className="text-xl text-slate-200 max-w-2xl mx-auto">The loudest house in the league. Home of the Raiders since 1995.</p>
+            <p className="text-xl text-slate-200 max-w-2xl mx-auto">The loudest house in the league. Home of the Raiders since 1975.</p>
           </div>
         </div>
 
@@ -37,14 +37,12 @@ const Arena = () => {
                   About the Venue
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Alcott Arena is a state-of-the-art multi-purpose facility located in the heart of Georgetown. With a seating capacity of 15,000 for hockey games, it offers an intimate yet electric atmosphere that has become legendary among fans and players alike.
+                  Alcott Arena is a state-of-the-art facility located in the heart of Georgetown. With a seating capacity of 1,156 for hockey games, it offers an intimate yet electric atmosphere that has become legendary among fans and players alike.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: "Capacity", value: "15,000" },
-                    { label: "Opened", value: "1995" },
-                    { label: "Renovated", value: "2022" },
-                    { label: "Ice Surface", value: "NHL Standard" },
+                    { label: "Capacity", value: "1,156" },
+                    { label: "Opened", value: "1975" },
                   ].map((stat) => (
                     <div key={stat.label} className="bg-white p-4 rounded-xl shadow-sm border text-center">
                       <p className="text-xs text-muted-foreground uppercase font-bold mb-1">{stat.label}</p>
