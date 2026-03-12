@@ -2,12 +2,12 @@ export const siteConfig = {
   name: "Georgetown Raiders",
   contact: {
     email: "info@georgetownraiders.com",
-    phone: "(905) 877-8488",
+    phone: "(289) 808-0996",
     address: "221 Guelph St., Halton Hills, ON L7G 4A8",
     officeHours: {
-      monFri: "9:00 AM - 5:00 PM",
-      sat: "10:00 AM - 2:00 PM",
-      sun: "Closed"
+      monFri: "24hrs",
+      sat: "24hrs",
+      sun: "24hrs"
     }
   },
   payment: {
