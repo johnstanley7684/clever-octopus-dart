@@ -1,21 +1,18 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Zap, CheckCircle2 } from 'lucide-react';
+import { RefreshCw, Zap, CheckCircle2, Database } from 'lucide-react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { players } from '@/data/roster';
 import { fetchLiveStats } from '@/services/statsService';
+import { getStatsFromDatabase } from '@/services/syncService';
 import { showSuccess, showError } from '@/utils/toast';
-
-const playerStats = [...players]
-  .sort((a, b) => b.stats.pts - a.stats.pts)
-  .slice(0, 15);
 
 const seasonTrend = [
   { game: '1-10', goalsFor: 3.4, goalsAgainst: 2.6 },
@@ -29,6 +26,27 @@ const seasonTrend = [
 const Stats = () => {
   const [isSyncing, setIsSyncing] = useState(false);
   const [lastSync, setLastSync] = useState<string | null>(null);
+  const [displayStats, setDisplayStats] = useState<any[]>([]);
+  const [isUsingLiveDb, setIsUsingLiveDb] = useState(false);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const dbData = await getStatsFromDatabase();
+        if (dbData && dbData.length > 0) {
+          setDisplayStats(dbData);
+          setIsUsingLiveDb(true);
+        } else {
+          // Fallback to static data if DB is empty
+          setDisplayStats([...players].sort((a, b) => b.stats.pts - a.stats.pts).slice(0, 15));
+        }
+      } catch (err) {
+        console.log("Database not ready, using static data.");
+        setDisplayStats([...players].sort((a, b) => b.stats.pts - a.stats.pts).slice(0, 15));
+      }
+    };
+    loadData();
+  }, []);
 
   const handleLiveSync = async () => {
     setIsSyncing(true);
@@ -36,6 +54,7 @@ const Stats = () => {
       await fetchLiveStats();
       setLastSync(new Date().toLocaleTimeString());
       showSuccess("Stats synchronized with OJHL Network!");
+      // In a real app, you'd refresh the data from Supabase here
     } catch (err) {
       showError("Failed to sync live data. Check CORS settings.");
     } finally {
@@ -50,7 +69,14 @@ const Stats = () => {
       <main className="flex-grow container py-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
           <div>
-            <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-white">Official OJHL Statistics</h1>
+            <div className="flex items-center gap-2 mb-2">
+              <h1 className="text-4xl font-extrabold tracking-tight text-white">Official OJHL Statistics</h1>
+              {isUsingLiveDb && (
+                <Badge className="bg-green-600/20 text-green-500 border-green-500/50 gap-1">
+                  <Database className="h-3 w-3" /> Live Database
+                </Badge>
+              )}
+            </div>
             <p className="text-slate-400">
               Performance data for the Georgetown Raiders sourced from the official OJHL network.
             </p>
@@ -144,19 +170,19 @@ const Stats = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {playerStats.map((player) => (
+                {displayStats.map((player) => (
                   <TableRow key={player.id} className="hover:bg-zinc-800/50 transition-colors border-zinc-800">
                     <TableCell className="font-bold pl-6 text-white">{player.name}</TableCell>
-                    <TableCell className="text-center text-slate-400">{player.stats.gp}</TableCell>
-                    <TableCell className="text-center text-slate-400">{player.stats.g}</TableCell>
-                    <TableCell className="text-center text-slate-400">{player.stats.a}</TableCell>
-                    <TableCell className="text-center font-black text-red-600">{player.stats.pts}</TableCell>
+                    <TableCell className="text-center text-slate-400">{player.stats?.gp || player.gp}</TableCell>
+                    <TableCell className="text-center text-slate-400">{player.stats?.g || player.g}</TableCell>
+                    <TableCell className="text-center text-slate-400">{player.stats?.a || player.a}</TableCell>
+                    <TableCell className="text-center font-black text-red-600">{player.stats?.pts || player.pts}</TableCell>
                     <TableCell className="text-center">
-                      <span className={player.stats.plusMinus > 0 ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
-                        {player.stats.plusMinus > 0 ? `+${player.stats.plusMinus}` : player.stats.plusMinus}
+                      <span className={(player.stats?.plusMinus || player.plusMinus) > 0 ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
+                        {(player.stats?.plusMinus || player.plusMinus) > 0 ? `+${player.stats?.plusMinus || player.plusMinus}` : (player.stats?.plusMinus || player.plusMinus)}
                       </span>
                     </TableCell>
-                    <TableCell className="text-center pr-6 text-slate-400">{player.stats.pim}</TableCell>
+                    <TableCell className="text-center pr-6 text-slate-400">{player.stats?.pim || player.pim}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
