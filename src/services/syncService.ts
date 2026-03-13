@@ -1,9 +1,10 @@
-import { supabase } from '@/lib/supabase';
-import { fetchLiveStats } from './statsService';
+import { supabase, isConfigured } from '@/lib/supabase';
 
 export const syncStatsToDatabase = async (playerData: any[]) => {
-  // This function would take the scraped data and upsert it into Supabase
-  // For now, we'll simulate the database interaction
+  if (!isConfigured) {
+    console.warn("Sync skipped: Supabase is not configured.");
+    return null;
+  }
   
   const { data, error } = await supabase
     .from('player_stats')
@@ -14,6 +15,10 @@ export const syncStatsToDatabase = async (playerData: any[]) => {
 };
 
 export const getStatsFromDatabase = async () => {
+  if (!isConfigured) {
+    return null;
+  }
+
   const { data, error } = await supabase
     .from('player_stats')
     .select('*')
